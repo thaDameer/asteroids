@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LevelHandler : MonoBehaviour
 {
-    private List<MovingEntity> levelEntities = new List<MovingEntity>();
+    private List<MovementEntity> levelEntities = new List<MovementEntity>();
 
     private bool levelSetup;
 
@@ -20,7 +20,7 @@ public class LevelHandler : MonoBehaviour
     {
         foreach (Transform transform in transform)
         {
-            if (transform.TryGetComponent(out MovingEntity movingEntity))
+            if (transform.TryGetComponent(out MovementEntity movingEntity))
             {
                 levelEntities.Add(movingEntity);
             }
@@ -44,9 +44,9 @@ public class LevelHandler : MonoBehaviour
     }
 
    
-    void UpdateEntityWithinBounds(MovingEntity movingEntity)
+    void UpdateEntityWithinBounds(MovementEntity movementEntity)
     {
-        Vector2 viewportPos = camera.WorldToViewportPoint(movingEntity.transform.position);
+        Vector2 viewportPos = camera.WorldToViewportPoint(movementEntity.transform.position);
 
         float newX = viewportPos.x;
         newX = TryFlipBounds(newX);
@@ -56,7 +56,7 @@ public class LevelHandler : MonoBehaviour
         if (newX != viewportPos.x || newY != viewportPos.y)
         {
             var newPos = (Vector2)camera.ViewportToWorldPoint(new Vector3(newX, newY));
-            movingEntity.transform.position = newPos;
+            movementEntity.transform.position = newPos;
         }
 
         float TryFlipBounds(float value)

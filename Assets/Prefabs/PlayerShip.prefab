@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7960592631071143642}
   - component: {fileID: 9069781640288666224}
-  m_Layer: 0
+  - component: {fileID: 241739961655011504}
+  m_Layer: 6
   m_Name: PlayerShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628175138224705461}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.3964336, y: -0.5853989, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -45,10 +46,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed05853cb1de4311bf8b8af8b7975c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 200
-  acceleration: 5
-  deceleration: 4
-  maxSpeed: 8
+  <MovementEntityData>k__BackingField: {fileID: 11400000, guid: 981682d6e982a4f12958ac19b42fe4af, type: 2}
+  <BulletData>k__BackingField:
+    ShootSpeed: 10
+    HitDamage: 1
+    TargetLayer:
+      serializedVersion: 2
+      m_Bits: 128
+  <Projectile>k__BackingField: {fileID: 3801334080099401626, guid: 5a5b7c6eba90d44a6a6039ce857fadcc, type: 3}
+--- !u!50 &241739961655011504
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628175138224705461}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4087292631254789013
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,7 +91,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3233757373060144476}
   - component: {fileID: 7502058313299471132}
-  m_Layer: 0
+  - component: {fileID: 3152466609028788618}
+  m_Layer: 6
   m_Name: spaceShips_009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,8 +152,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -790595885
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0574b713344bd40e39b07a392f5f9953, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -133,3 +166,70 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &3152466609028788618
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4087292631254789013}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.14, y: 0.82}
+    newSize: {x: 1.14, y: 0.82}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.42999998, y: -0.41}
+      - {x: 0.57, y: -0.12}
+      - {x: 0.57, y: 0.17999999}
+      - {x: 0.56, y: 0.21}
+      - {x: 0.32999998, y: 0.21}
+      - {x: 0.32999998, y: 0.35999998}
+      - {x: 0.28, y: 0.41}
+      - {x: -0.32, y: 0.41}
+      - {x: -0.38, y: 0.39}
+      - {x: -0.39999998, y: 0.14}
+      - {x: -0.51, y: 0.19}
+      - {x: -0.55, y: 0.19}
+      - {x: -0.57, y: 0.14999999}
+      - {x: -0.57, y: -0.049999997}
+      - {x: -0.56, y: -0.089999996}
+      - {x: -0.45, y: -0.41}
+      - {x: -0.22, y: -0.41}
+      - {x: -0.17999999, y: -0.39999998}
+      - {x: -0.14999999, y: -0.41}
+      - {x: 0.02, y: -0.41}
+      - {x: 0.14, y: -0.34}
+      - {x: 0.24, y: -0.41}
+  m_UseDelaunayMesh: 0

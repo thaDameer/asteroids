@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c1412de-d3ef-4d0c-bd61-bc9fb73d1386" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/DI Installers/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DI Installers/GameInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Projectile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Projectile.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ShootingMovementEntity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ShootingMovementEntity.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Asteroids/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asteroids/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerShip.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerShip.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovementEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingEntity.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovementEntity.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerShip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerShip.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +25,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Factories/BulletFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputControll/IController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8f2b770c4a1b401a99ba9ed80a5c09b9469200/f1/644a7b02/CancellationTokenSource.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -97,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1707649890328</updated>
       <workItem from="1707649892537" duration="3979000" />
-      <workItem from="1707654090086" duration="1913000" />
+      <workItem from="1707654090086" duration="7190000" />
     </task>
     <servers />
   </component>
@@ -117,26 +125,13 @@
           <line>12</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/PlayerShip.cs" initialLine="12" containingFunctionPresentation="Method 'Construct'">
             <startOffsets>
-              <option value="312" />
+              <option value="214" />
             </startOffsets>
             <endOffsets>
-              <option value="341" />
+              <option value="243" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/DI Installers/GameInstaller.cs</url>
-          <line>7</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/DI Installers/GameInstaller.cs" initialLine="7" containingFunctionPresentation="Method 'InstallBindings'">
-            <startOffsets>
-              <option value="137" />
-            </startOffsets>
-            <endOffsets>
-              <option value="201" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
