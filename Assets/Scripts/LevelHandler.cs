@@ -2,20 +2,31 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class LevelHandler : MonoBehaviour
 {
+    [SerializeField] private Bounds bounds;
     private List<MovementEntity> levelEntities = new List<MovementEntity>();
 
     private bool levelSetup;
 
     private Camera camera;
+
+    private ILevelManager levelManager;
+    [Inject]
+    public void Construct(ILevelManager levelManager)
+    {
+        this.levelManager = levelManager;
+    }
     private void Start()
     {
         camera = Camera.main;
+        Debug.Log(levelManager.CurrentLevel);
         Setup();
     }
-
+    
+   
     public void Setup()
     {
         foreach (Transform transform in transform)
@@ -37,7 +48,8 @@ public class LevelHandler : MonoBehaviour
         {
             foreach (var movingEntity in levelEntities)
             {
-                UpdateEntityWithinBounds(movingEntity);
+                if(movingEntity)
+                    UpdateEntityWithinBounds(movingEntity);
             }
             yield return wfs;
         }

@@ -8,10 +8,12 @@ public abstract class MovementEntity : MonoBehaviour
     public float AccelerationSpeed => MovementEntityData.AccelerationSpeed;
     public float MaxSpeed => MovementEntityData.MaxSpeed;
     public float DecelerationSpeed => MovementEntityData.DecelerationSpeed;
+    [field: SerializeField]public Transform RotationTarget { get; set; }
+    
     public float RotationSpeed => MovementEntityData.RotationSpeed;
-
+    public abstract Vector3 MovementDirection { get; set; }
     protected float currentSpeed;
-    public virtual void HandleMovement(bool accelerate)
+    public virtual void UpdateMovement(bool accelerate)
     {
         if (accelerate)
         {
@@ -21,14 +23,12 @@ public abstract class MovementEntity : MonoBehaviour
         {
             currentSpeed = Mathf.Max(currentSpeed - DecelerationSpeed * Time.deltaTime, 0f);
         }
-
-    
-        Vector3 forwardDirection = transform.up;
-        transform.position += forwardDirection * currentSpeed * Time.deltaTime;
+        
+        transform.position += MovementDirection * currentSpeed * Time.deltaTime;
     }
 
-    public virtual void HandleRotation(Vector2 input)
+    public virtual void UpdateRotation(Vector2 input)
     {
-        transform.Rotate(Vector3.forward * -input.x * RotationSpeed * Time.deltaTime);
+        RotationTarget.Rotate(Vector3.forward * -input.x * RotationSpeed * Time.deltaTime);
     }
 }
