@@ -5,7 +5,7 @@ using UnityEngine;
 
 public static class SpriteHelperClass 
 {
-    public static Color flashColor = Color.red;
+    public static Color flashColor = Color.black;
     
     public static async void Flash(SpriteRenderer spriteRenderer,  float flashDuration = 0.05f, int flashCount = 3)
     {

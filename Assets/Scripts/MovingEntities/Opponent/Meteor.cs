@@ -28,7 +28,8 @@ public class Meteor : MovementEntity,IDestructable
     }
     private void SetRandomDirection()
     {
-        MovementDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+
+        MovementDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
     }
     private void SetRandomRotationDirection()
     {

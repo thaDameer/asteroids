@@ -4,7 +4,6 @@ using UnityEngine;
 public abstract class MovementEntity : MonoBehaviour
 {
     [field: SerializeField]public MovementEntityData MovementEntityData { get; set; }
-    protected Rigidbody2D rb2D => GetComponent<Rigidbody2D>();
     public float AccelerationSpeed => MovementEntityData.AccelerationSpeed;
     public float MaxSpeed => MovementEntityData.MaxSpeed;
     public float DecelerationSpeed => MovementEntityData.DecelerationSpeed;
@@ -13,6 +12,8 @@ public abstract class MovementEntity : MonoBehaviour
     public float RotationSpeed => MovementEntityData.RotationSpeed;
     public abstract Vector3 MovementDirection { get; set; }
     protected float currentSpeed;
+    
+    
     public virtual void UpdateMovement(bool accelerate)
     {
         if (accelerate)

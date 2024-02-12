@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     private int HitDamage => _dataContainer.HitDamage;
     private LayerMask targetLayer => _dataContainer.TargetLayer;
 
-    [SerializeField]private float radius = 1;
+    [SerializeField]private float radius = 0.2f;
     [SerializeField] private float distance = 0.2f;
     public void Shoot(BulletDataContainer bulletData)
     {
@@ -27,9 +27,10 @@ public class Projectile : MonoBehaviour
       
     }
 
+    
     private void ProcessRaycastHitDetection()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up,distance,targetLayer);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, radius,transform.up,distance,targetLayer);
         
         if (hit.collider != null)
         {
@@ -51,5 +52,10 @@ public class Projectile : MonoBehaviour
         var color = Color.green;
         color.a = 0.3f;
         Gizmos.DrawRay(transform.position,transform.up*distance);
+        var circleCastPos = transform.up * distance + transform.position;
+        color = Color.magenta;
+        color.a = 0.3f;
+        Gizmos.color = color;
+        Gizmos.DrawWireSphere(circleCastPos,radius);
     }
 }

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   <AccelerationSpeed>k__BackingField: 8
-  <DecelerationSpeed>k__BackingField: 8
+  <DecelerationSpeed>k__BackingField: 2
   <MaxSpeed>k__BackingField: 5
-  <RotationSpeed>k__BackingField: 250
+  <RotationSpeed>k__BackingField: 300

@@ -2,14 +2,31 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Zenject;
 
-public class PlayerShip : ShootingMovementEntity
+public class PlayerShip : ShootingMovementEntity,IDestructable
 {
 
     private IController inputController;
+
+    public void Setup()
+    {
+        MaxHealth = 1;
+        CurrentHealth = 1;
+    }
+
+    private Vector3 currentDirection;
     public override Vector3 MovementDirection
     {
-        get => transform.up;
-        set => transform.up = value;
+        get
+        {
+
+            if (inputController.Accelerate)
+            {
+                currentDirection = transform.up;
+            }
+
+            return currentDirection;
+        }
+        set => currentDirection = value;
     }
 
     [Inject]
@@ -21,7 +38,9 @@ public class PlayerShip : ShootingMovementEntity
     void Update()
     {
         UpdateRotation(inputController.InputAxis);
+        
         UpdateMovement(inputController.Accelerate);
+        
         if (inputController.Shoot)
         {
             Shoot(transform.up);
@@ -29,16 +48,16 @@ public class PlayerShip : ShootingMovementEntity
     }
 
 
-
-}
-
-
-public interface IPlayerShip
-{
-    public float AccelerationSpeed { get; set; }
-    public float ShootSpeed { get; set; }
+    public SpriteRenderer SpriteRenderer { get; set; }
+    public int MaxHealth { get; set; }
+    public int CurrentHealth { get; set; }
+    public void TakeDamage(int dmg)
+    {
+        
+    }
     
 }
+
 
 public interface IDestructable
 {

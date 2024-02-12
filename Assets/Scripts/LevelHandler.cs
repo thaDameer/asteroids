@@ -14,6 +14,8 @@ public class LevelHandler : MonoBehaviour
     private Camera camera;
 
     private ILevelManager levelManager;
+    
+    
     [Inject]
     public void Construct(ILevelManager levelManager)
     {
@@ -55,7 +57,7 @@ public class LevelHandler : MonoBehaviour
         }
     }
 
-   
+    float screenPadding = 0.05f;
     void UpdateEntityWithinBounds(MovementEntity movementEntity)
     {
         Vector2 viewportPos = camera.WorldToViewportPoint(movementEntity.transform.position);
@@ -71,15 +73,22 @@ public class LevelHandler : MonoBehaviour
             movementEntity.transform.position = newPos;
         }
 
+      
         float TryFlipBounds(float value)
         {
-            value = value switch
-            {
-                > 1 => 0,
-                < 0 => 1,
-                _ => value
-            };
+            if (value > 1 + screenPadding)
+                return 0 - screenPadding;
+            else if (value < 0 - screenPadding)
+                return 1 + screenPadding;
             return value;
+            //
+            // value = value switch
+            // {
+            //     > 1 => 0+0.1f,
+            //     < 0 => 1-0.1f,
+            //     _ => value
+            // };
+            // return value;
         }
     }
 }

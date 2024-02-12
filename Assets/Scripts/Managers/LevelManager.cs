@@ -5,7 +5,9 @@ using System.Collections.Generic;
 public class LevelManager : ManagerBase,ILevelManager
 {
     public int CurrentLevel { get; set; }
-
+    public Action<LevelData> OnBuildLevelFromData { get; set; }
+    
+    
     private void Start()
     {
         Initialize();
@@ -14,7 +16,7 @@ public class LevelManager : ManagerBase,ILevelManager
     public override void Initialize()
     {
         base.Initialize();
-        CurrentLevel = 1;
+        CurrentLevel = 5;
     }
 
     private LevelData GetLevelData(int level)
@@ -29,6 +31,8 @@ public class LevelManager : ManagerBase,ILevelManager
     {
         return GetLevelData(CurrentLevel);
     }
+
+    
 }
 
 [Serializable]
