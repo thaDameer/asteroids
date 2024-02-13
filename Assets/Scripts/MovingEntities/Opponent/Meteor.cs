@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using Zenject;
 using Random = UnityEngine.Random;
@@ -7,7 +8,7 @@ public class Meteor : MovementEntity,IDestructable,IMeteor
 {
     public Action<IMeteor,Vector2> OnMeteorDestroyed { get; set; }
     [field: SerializeField]public IMeteor.MeteorSize meteorSize { get; set; }
-    private int MeteorHealth = 3;
+
     public override Vector3 MovementDirection { get; set; }
     private Vector2 rotateDir;
     [field: SerializeField]public SpriteRenderer SpriteRenderer { get; set; }
@@ -43,18 +44,20 @@ public class Meteor : MovementEntity,IDestructable,IMeteor
     }
     public void Died()
     {
+        
         Destroy(gameObject);
-        GameEvents.OnMeteoerDestroyed?.Invoke(this);
+   
     } 
     
     public void TakeDamage(int dmg)
     {
         CurrentHealth -= dmg;
-        SpriteHelperClass.Flash(SpriteRenderer,0.05f,2);
+        float flashDuration = 0.05f;
+        SpriteHelperClass.Flash(SpriteRenderer,flashDuration,2);
         if (CurrentHealth <= 0)
         {
             OnMeteorDestroyed?.Invoke(this,transform.position);
-            Died();
+            Invoke("Died",flashDuration);
             return;
         }
     }

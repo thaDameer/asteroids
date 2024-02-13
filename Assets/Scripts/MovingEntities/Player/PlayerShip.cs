@@ -72,7 +72,7 @@ public class PlayerShip : ShootingMovementEntity,IDestructable
         rb2d.AddForce(transform.up * AccelerationSpeed);
         rb2d.velocity = Vector2.ClampMagnitude(rb2d.velocity, MaxSpeed);
     }
-
+    
     public SpriteRenderer SpriteRenderer { get; set; }
     public int MaxHealth { get; set; }
     public int CurrentHealth { get; set; }

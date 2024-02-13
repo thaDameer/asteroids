@@ -8,7 +8,3 @@ public class GameManager : MonoBehaviour
     
 }
 
-public static class GameEvents
-{
-    public static Action<IDestructable> OnMeteoerDestroyed;
-}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aff464591ade4d71a0f74a972908d3a, type: 3}
   m_Name: MediumMeteor
   m_EditorClassIdentifier: 
-  <AccelerationSpeed>k__BackingField: 15
+  <AccelerationSpeed>k__BackingField: 50
   <DecelerationSpeed>k__BackingField: 5
   <MaxSpeed>k__BackingField: 3
   <RotationSpeed>k__BackingField: 50

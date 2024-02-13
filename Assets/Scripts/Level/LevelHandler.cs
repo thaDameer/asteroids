@@ -34,6 +34,8 @@ public class LevelHandler : MonoBehaviour
     {
         _meteorHandler.Setup(_levelService.CurrentLevel);
         var clone =playerSpawnFactory.Create();
+        clone.transform.position =Vector3.zero;
+        
         clone.transform.parent = transform;
         foreach (Transform transform in transform)
         {

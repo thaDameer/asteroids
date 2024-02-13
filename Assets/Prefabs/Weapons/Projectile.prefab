@@ -47,14 +47,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25855ba3c50e4c91854b557637949de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dataContainer:
+  data:
     ShootSpeed: 0
     HitDamage: 0
     TargetLayer:
       serializedVersion: 2
       m_Bits: 0
-  radius: 0.2
-  distance: 0.2
+  radius: 0.3
+  distance: 0
 --- !u!50 &8943320149927661304
 Rigidbody2D:
   serializedVersion: 4
