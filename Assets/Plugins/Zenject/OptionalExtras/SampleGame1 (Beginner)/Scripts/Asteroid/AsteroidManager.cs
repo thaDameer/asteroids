@@ -22,8 +22,7 @@ namespace Zenject.Asteroids
         [InjectOptional]
         bool _autoSpawn = true;
 
-        public AsteroidManager(
-            Settings settings, Asteroid.Factory asteroidFactory, LevelHelper level)
+        public AsteroidManager(Settings settings, Asteroid.Factory asteroidFactory, LevelHelper level)
         {
             _settings = settings;
             _timeIntervalBetweenSpawns = _settings.maxSpawnTime / (_settings.maxSpawns - _settings.startingSpawns);

@@ -5,9 +5,13 @@ namespace Zenject.Asteroids
 {
     public class GameInstaller : MonoInstaller
     {
-        [Inject]
-        Settings _settings = null;
 
+        Settings _settings = null;
+        [Inject]
+        public void Construct(Settings settings)
+        {
+            _settings = settings;
+        }
         public override void InstallBindings()
         {
             // In this example there is only one 'installer' but in larger projects you

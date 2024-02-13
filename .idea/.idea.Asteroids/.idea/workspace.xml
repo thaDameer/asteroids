@@ -5,10 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c1412de-d3ef-4d0c-bd61-bc9fb73d1386" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HelperClasses/SpriteHelperClass.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HelperClasses/SpriteHelperClass.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Player/IDestructable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Player/IDestructable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Asteroids/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asteroids/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DI Installers/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DI Installers/GameInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Scripts/Asteroid/AsteroidManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Scripts/Asteroid/AsteroidManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Scripts/Installers/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Scripts/Installers/GameInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Opponents/LargeMeteor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Opponents/LargeMeteor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerShip.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerShip.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/MovingEntityData/Player/PlayerData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/MovingEntityData/Player/PlayerData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Factories/AssetManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Factories/AssetManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Factories/BulletFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Factories/BulletFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputControll/IController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputControll/IControllerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputControll/IController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputControll/IControllerService.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ILevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/ILevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ILevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/ILevelService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ILevelManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/ILevelService.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/LevelService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/LevelManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/LevelService.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/MovementEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/MovementEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Opponent/Meteor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Opponent/Meteor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Player/PlayerShip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Player/PlayerShip.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/ShootingMovementEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/ShootingMovementEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Projectile.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,12 +42,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Factories/BulletFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DI Installers/AsteroidsInstaller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Factories/AssetsFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HelperClasses/SpriteHelperClass.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputControll/IController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputControll/IControllerService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/LevelService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovingEntities/Opponent/Meteor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.21.19/Runtime/AssetReference.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.21.19/Runtime/ResourceManager/AsyncOperations/AsyncOperationHandle.cs" root0="SKIP_HIGHLIGHTING" />
@@ -35,6 +57,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8f2b770c4a1b401a99ba9ed80a5c09b9469200/56/f3db39b4/AsyncVoidMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8f2b770c4a1b401a99ba9ed80a5c09b9469200/86/660982ee/ValueType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8f2b770c4a1b401a99ba9ed80a5c09b9469200/f1/644a7b02/CancellationTokenSource.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/da2989d8790945c48ab1a596da5c753994ae00/68/f85a7738/SerializedObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/da2989d8790945c48ab1a596da5c753994ae00/a8/5470e973/EditorApplication.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -68,6 +91,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/Asteroids/ast.app/Contents/MacOS/Asteroids" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop/Asteroids/ast.app/Contents/MacOS" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2022.3.9f1/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath $PROJECT_DIR$ -debugCodeOptimization" />
@@ -94,10 +125,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="22271">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="83817">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="22271" />
+      <option name="pid" value="83817" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -114,7 +145,10 @@
       <option name="presentableId" value="Default" />
       <updated>1707649890328</updated>
       <workItem from="1707649892537" duration="3979000" />
-      <workItem from="1707654090086" duration="22526000" />
+      <workItem from="1707654090086" duration="26529000" />
+      <workItem from="1707744997759" duration="1952000" />
+      <workItem from="1707757868388" duration="7818000" />
+      <workItem from="1707847512602" duration="4346000" />
     </task>
     <servers />
   </component>
@@ -131,45 +165,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Factories/AssetManager.cs</url>
-          <line>16</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Factories/AssetManager.cs" initialLine="15" containingFunctionPresentation="Method 'Load'">
-            <startOffsets>
-              <option value="404" />
-            </startOffsets>
-            <endOffsets>
-              <option value="405" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Factories/AssetManager.cs</url>
-          <line>22</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Factories/AssetManager.cs" initialLine="20" containingFunctionPresentation="Method 'LoadAsset'">
-            <startOffsets>
-              <option value="586" />
-            </startOffsets>
-            <endOffsets>
-              <option value="669" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Factories/AssetManager.cs</url>
-          <line>12</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Factories/AssetManager.cs" initialLine="11" containingFunctionPresentation="Method 'Start'">
-            <startOffsets>
-              <option value="297" />
-            </startOffsets>
-            <endOffsets>
-              <option value="340" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/HelperClasses/SpriteHelperClass.cs</url>
           <line>11</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/HelperClasses/SpriteHelperClass.cs" initialLine="11" containingFunctionPresentation="Method 'Flash'">
@@ -183,17 +178,95 @@
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/LevelHandler.cs</url>
-          <line>62</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/LevelHandler.cs" initialLine="62" containingFunctionPresentation="Method 'UpdateEntityWithinBounds'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/MovingEntities/ShootingMovementEntity.cs</url>
+          <line>18</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/ShootingMovementEntity.cs" initialLine="18" containingFunctionPresentation="Method 'Construct'">
             <startOffsets>
-              <option value="1413" />
+              <option value="420" />
             </startOffsets>
             <endOffsets>
-              <option value="1498" />
+              <option value="456" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="18" />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Scripts/Installers/GameInstaller.cs</url>
+          <line>12</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Scripts/Installers/GameInstaller.cs" initialLine="12" containingFunctionPresentation="Method 'Construct'">
+            <startOffsets>
+              <option value="241" />
+            </startOffsets>
+            <endOffsets>
+              <option value="262" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Scripts/Installers/GameInstaller.cs</url>
+          <line>31</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Scripts/Installers/GameInstaller.cs" initialLine="31" containingFunctionPresentation="Method 'InstallBindings'">
+            <startOffsets>
+              <option value="1116" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1135" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Scripts/Installers/GameSettingsInstaller.cs</url>
+          <line>45</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Scripts/Installers/GameSettingsInstaller.cs" initialLine="45" containingFunctionPresentation="Method 'InstallBindings'">
+            <startOffsets>
+              <option value="2100" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2141" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/DI Installers/GameInstaller.cs</url>
+          <line>14</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/DI Installers/GameInstaller.cs" initialLine="13" containingFunctionPresentation="Method 'Construct'">
+            <startOffsets>
+              <option value="466" />
+            </startOffsets>
+            <endOffsets>
+              <option value="491" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Projectile.cs</url>
+          <line>16</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Projectile.cs" initialLine="16" containingFunctionPresentation="Method 'Shoot'">
+            <startOffsets>
+              <option value="638" />
+            </startOffsets>
+            <endOffsets>
+              <option value="638" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/MovingEntities/ShootingMovementEntity.cs</url>
+          <line>26</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/ShootingMovementEntity.cs" initialLine="25" containingFunctionPresentation="Method 'Shoot'">
+            <startOffsets>
+              <option value="642" />
+            </startOffsets>
+            <endOffsets>
+              <option value="689" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

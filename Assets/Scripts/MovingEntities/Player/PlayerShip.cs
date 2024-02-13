@@ -4,8 +4,8 @@ using Zenject;
 
 public class PlayerShip : ShootingMovementEntity,IDestructable
 {
-
-    private IController inputController;
+    [SerializeField]private Rigidbody2D rb2d;
+    private IControllerService _inputControllerService;
 
     public void Setup()
     {
@@ -19,9 +19,9 @@ public class PlayerShip : ShootingMovementEntity,IDestructable
         get
         {
 
-            if (inputController.Accelerate)
+            if (_inputControllerService.Accelerate)
             {
-                currentDirection = transform.up;
+                currentDirection = Vector2.Lerp(transform.up,velocity.normalized,0.9f).normalized;
             }
 
             return currentDirection;
@@ -30,43 +30,43 @@ public class PlayerShip : ShootingMovementEntity,IDestructable
     }
 
     [Inject]
-    public void Construct(IController controller)
+    public void Construct(IControllerService controllerService)
     {
-        inputController = controller;
-    }
-    
-    void Update()
-    {
-        UpdateRotation(inputController.InputAxis);
-        
-        UpdateMovement(inputController.Accelerate);
-        
-        if (inputController.Shoot)
-        {
-            Shoot(transform.up);
-        }
+        _inputControllerService = controllerService;
     }
 
+    private Vector2 velocity => ((Vector2)transform.position - lastPos) / Time.deltaTime;
+
+    private Vector2 lastPos;
+    void Update()
+    {
+        var currentPos = transform.position;
+        UpdateRotation(_inputControllerService.InputAxis);
+        Debug.Log(velocity.magnitude);
+        UpdateMovement(_inputControllerService.Accelerate);
+        
+        if (_inputControllerService.Shoot)
+        {
+            Shoot();
+        }
+
+        lastPos = currentPos;
+    }
+
+    public override void UpdateMovement(bool accelerate)
+    {
+        if(!accelerate)return;
+        rb2d.AddForce(transform.up * AccelerationSpeed);
+        rb2d.velocity = Vector2.ClampMagnitude(rb2d.velocity, MaxSpeed);
+    }
 
     public SpriteRenderer SpriteRenderer { get; set; }
     public int MaxHealth { get; set; }
     public int CurrentHealth { get; set; }
     public void TakeDamage(int dmg)
     {
-        
+        CurrentHealth -= dmg;
     }
     
-}
-
-
-public interface IDestructable
-{
-    [field: SerializeField]public SpriteRenderer SpriteRenderer { get; set; }
-    [field: SerializeField]public abstract int MaxHealth { get; set; }
-    public int CurrentHealth { get; set; }
-
-   
-    public void TakeDamage(int dmg);
-
-    public void Died() { }
+    public class Factory : PlaceholderFactory<PlayerShip> { }
 }

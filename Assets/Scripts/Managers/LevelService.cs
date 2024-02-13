@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class LevelManager : ManagerBase,ILevelManager
+public class LevelService : ManagerBase,ILevelService
 {
     public int CurrentLevel { get; set; }
     public Action<LevelData> OnBuildLevelFromData { get; set; }
@@ -31,8 +31,6 @@ public class LevelManager : ManagerBase,ILevelManager
     {
         return GetLevelData(CurrentLevel);
     }
-
-    
 }
 
 [Serializable]

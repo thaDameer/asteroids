@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 8997597410576989008}
   - component: {fileID: 6118998295637913837}
   m_Layer: 7
-  m_Name: LargeMeteor
+  m_Name: MediumMeteor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

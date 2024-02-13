@@ -13,24 +13,40 @@ public class LevelHandler : MonoBehaviour
 
     private Camera camera;
 
-    private ILevelManager levelManager;
-    
+    private ILevelService _levelService;
+
+    #region Assets
+
+    [Inject]
+    private PlayerShip.Factory playerSpawnFactory;
+
+    [Inject] private Meteor.LargeMeteor MeteorFactory;
+
+    #endregion
+
     
     [Inject]
-    public void Construct(ILevelManager levelManager)
+    public void Construct(ILevelService levelService)
     {
-        this.levelManager = levelManager;
+        this._levelService = levelService;
     }
+    
+
+
     private void Start()
     {
         camera = Camera.main;
-        Debug.Log(levelManager.CurrentLevel);
-        Setup();
+        SetupLevel();
+        var meteor = MeteorFactory.Create();
+        
     }
     
    
-    public void Setup()
+    public void SetupLevel()
     {
+
+        var clone =playerSpawnFactory.Create();
+        clone.transform.parent = transform;
         foreach (Transform transform in transform)
         {
             if (transform.TryGetComponent(out MovementEntity movingEntity))

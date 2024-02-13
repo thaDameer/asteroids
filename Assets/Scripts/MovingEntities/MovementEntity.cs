@@ -12,8 +12,11 @@ public abstract class MovementEntity : MonoBehaviour
     public float RotationSpeed => MovementEntityData.RotationSpeed;
     public abstract Vector3 MovementDirection { get; set; }
     protected float currentSpeed;
-    
-    
+
+    public void Construct(AsteroidsInstaller.PlayerMovementVariables movementVariables)
+    {
+        var t = movementVariables;
+    }
     public virtual void UpdateMovement(bool accelerate)
     {
         if (accelerate)

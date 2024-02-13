@@ -3,14 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IController 
+public interface IControllerService 
 {
     public bool Accelerate { get; }
     public bool Shoot { get; }
     public Vector2 InputAxis { get; }
 }
 
-public class KeyboardControls : IController
+public class KeyboardControls : IControllerService
 {
     public bool Accelerate => InputAxis.y > 0;
     public bool Shoot => Input.GetKeyDown(KeyCode.Space);

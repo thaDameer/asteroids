@@ -9,27 +9,45 @@ using Zenject;
 public abstract class ShootingMovementEntity : MovementEntity
 {
     
-    [field: SerializeField]public BulletDataContainer BulletData { get; set; }
-    [field: SerializeField]public AssetReference Projectile{ get; set; }
+    [field: SerializeField]public ProjectileData ProjectileData { get; set; }
 
-    //IBulletFactory
-    public async virtual void Shoot(Vector2 dir)
+    private IBulletSpawner _bulletSpawner;
+
+    [Inject]
+    public void Construct(IBulletSpawner bulletSpawner)
     {
-        var handle =BulletFactory.Instance.InstantiateProjectile(transform.position, transform.rotation);
-        await handle.Task;
-
-        if (handle.Result != null)
-        {
-            Projectile projectile = null;
-            projectile = handle.Result.GetComponent<Projectile>();
-            projectile.Shoot(BulletData);
-        }
+        this._bulletSpawner = bulletSpawner;
     }
+    
+    public virtual void Shoot()
+    {
+        ProjectileShootingData shootingData =
+            new ProjectileShootingData(ProjectileData, transform, transform.up);
+
+        _bulletSpawner.ShootPlayerBullet(shootingData);
+    }
+    public class Factory : PlaceholderFactory<ShootingMovementEntity> { }
 }
 [Serializable]
-public class BulletDataContainer
+public struct ProjectileData
 {
     public float ShootSpeed;
-    [FormerlySerializedAs("DamageOnHit")] public int HitDamage;
+    public int HitDamage;
     public LayerMask TargetLayer;
 }
+
+public struct ProjectileShootingData
+{
+    public ProjectileData ProjectileData;
+    public Vector2 Position;
+    public Quaternion Rotation;
+    public Vector2 Direction;
+    public ProjectileShootingData(ProjectileData projectileData,Transform transform, Vector2 dir)
+    {
+        ProjectileData = projectileData;
+        Position = transform.position;
+        Rotation = transform.rotation;
+        Direction = dir;
+    }
+}
+

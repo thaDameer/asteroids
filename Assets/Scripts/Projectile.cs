@@ -1,22 +1,25 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
+
 [RequireComponent(typeof(Rigidbody2D))]
 public class Projectile : MonoBehaviour
 {
-    [SerializeField]private BulletDataContainer _dataContainer;
-    private float shootSpeed => _dataContainer.ShootSpeed;
-    private int HitDamage => _dataContainer.HitDamage;
-    private LayerMask targetLayer => _dataContainer.TargetLayer;
-
+    [FormerlySerializedAs("setupData")] [FormerlySerializedAs("_dataContainer")] [SerializeField]private ProjectileData data;
+    private float shootSpeed => data.ShootSpeed;
+    private int HitDamage => data.HitDamage;
+    private LayerMask targetLayer => data.TargetLayer;
     [SerializeField]private float radius = 0.2f;
     [SerializeField] private float distance = 0.2f;
-    public void Shoot(BulletDataContainer bulletData)
+    private Vector2 shootDir;
+    public void Shoot(ProjectileShootingData projectileShootingData)
     {
-        _dataContainer = bulletData;
+        data = projectileShootingData.ProjectileData;
+        shootDir = projectileShootingData.Direction;
     }
     public void Update()
     {
-        if(_dataContainer==null) return;
+        if(shootDir == Vector2.zero) return;
         UpdateMovement();   
         ProcessRaycastHitDetection();
     }

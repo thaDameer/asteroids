@@ -48,17 +48,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MovementEntityData>k__BackingField: {fileID: 11400000, guid: 981682d6e982a4f12958ac19b42fe4af, type: 2}
   <RotationTarget>k__BackingField: {fileID: 7960592631071143642}
-  <BulletData>k__BackingField:
+  <ProjectileData>k__BackingField:
     ShootSpeed: 20
     HitDamage: 1
     TargetLayer:
       serializedVersion: 2
       m_Bits: 128
-  <Projectile>k__BackingField:
-    m_AssetGUID: 
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
+  rb2d: {fileID: 241739961655011504}
 --- !u!50 &241739961655011504
 Rigidbody2D:
   serializedVersion: 4
@@ -67,14 +63,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628175138224705461}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -159,7 +155,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -790595885
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0574b713344bd40e39b07a392f5f9953, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
