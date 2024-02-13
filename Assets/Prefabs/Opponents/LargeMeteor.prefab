@@ -276,6 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MovementEntityData>k__BackingField: {fileID: 11400000, guid: 08f77edf254a84278ad886c1c7b407b8, type: 2}
   <RotationTarget>k__BackingField: {fileID: 1004677779264830677}
+  <meteorSize>k__BackingField: 2
   <SpriteRenderer>k__BackingField: {fileID: 2594662559090139948}
   <MaxHealth>k__BackingField: 1
 --- !u!58 &6118998295637913837

@@ -1,10 +1,12 @@
+using System;
 using UnityEngine;
 using Zenject;
 using Random = UnityEngine.Random;
 
 public class Meteor : MovementEntity,IDestructable,IMeteor
 {
-    public IMeteor.MeteorSize meteorSize { get; set; }
+    public Action<IMeteor,Vector2> OnMeteorDestroyed { get; set; }
+    [field: SerializeField]public IMeteor.MeteorSize meteorSize { get; set; }
     private int MeteorHealth = 3;
     public override Vector3 MovementDirection { get; set; }
     private Vector2 rotateDir;
@@ -24,9 +26,11 @@ public class Meteor : MovementEntity,IDestructable,IMeteor
         SetRandomDirection();
         SetRandomRotationDirection();
     }
+
+ 
     private void SetRandomDirection()
     {
-        MovementDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+        MovementDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
     }
     private void SetRandomRotationDirection()
     {
@@ -41,7 +45,7 @@ public class Meteor : MovementEntity,IDestructable,IMeteor
     {
         Destroy(gameObject);
         GameEvents.OnMeteoerDestroyed?.Invoke(this);
-    }
+    } 
     
     public void TakeDamage(int dmg)
     {
@@ -49,6 +53,7 @@ public class Meteor : MovementEntity,IDestructable,IMeteor
         SpriteHelperClass.Flash(SpriteRenderer,0.05f,2);
         if (CurrentHealth <= 0)
         {
+            OnMeteorDestroyed?.Invoke(this,transform.position);
             Died();
             return;
         }
@@ -62,7 +67,9 @@ public class Meteor : MovementEntity,IDestructable,IMeteor
 
 public interface IMeteor
 {
+    public Action<IMeteor,Vector2> OnMeteorDestroyed { get; set; }
     public MeteorSize meteorSize { get; set; }
+    
     public enum MeteorSize
     {
         Small,

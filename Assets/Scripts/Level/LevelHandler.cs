@@ -6,24 +6,13 @@ using Zenject;
 
 public class LevelHandler : MonoBehaviour
 {
-    [SerializeField] private Bounds bounds;
-    private List<MovementEntity> levelEntities = new List<MovementEntity>();
-
-    private bool levelSetup;
-
     private Camera camera;
-
+    private List<MovementEntity> levelEntities = new List<MovementEntity>();
     private ILevelService _levelService;
 
-    #region Assets
-
+    [SerializeField] private MeteorHandler _meteorHandler;
     [Inject]
     private PlayerShip.Factory playerSpawnFactory;
-
-    [Inject] private Meteor.LargeMeteor MeteorFactory;
-
-    #endregion
-
     
     [Inject]
     public void Construct(ILevelService levelService)
@@ -36,15 +25,14 @@ public class LevelHandler : MonoBehaviour
     private void Start()
     {
         camera = Camera.main;
+        _meteorHandler.Init(this);
         SetupLevel();
-        var meteor = MeteorFactory.Create();
-        
     }
     
    
     public void SetupLevel()
     {
-
+        _meteorHandler.Setup(_levelService.CurrentLevel);
         var clone =playerSpawnFactory.Create();
         clone.transform.parent = transform;
         foreach (Transform transform in transform)
@@ -54,11 +42,14 @@ public class LevelHandler : MonoBehaviour
                 levelEntities.Add(movingEntity);
             }
         }
-
-        levelSetup = true;
+        
         StartCoroutine(ProcessEntitiesInBounds());
     }
 
+    public void AddMovementEntity(MovementEntity movementEntity)
+    {
+        levelEntities.Add(movementEntity);
+    }
     IEnumerator ProcessEntitiesInBounds()
     {
         var wfs = new WaitForSeconds(0.2f);

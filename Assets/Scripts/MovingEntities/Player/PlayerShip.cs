@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Zenject;
@@ -43,7 +44,7 @@ public class PlayerShip : ShootingMovementEntity,IDestructable
         var currentPos = transform.position;
         UpdateRotation(_inputControllerService.InputAxis);
         Debug.Log(velocity.magnitude);
-        UpdateMovement(_inputControllerService.Accelerate);
+        
         
         if (_inputControllerService.Shoot)
         {
@@ -53,9 +54,21 @@ public class PlayerShip : ShootingMovementEntity,IDestructable
         lastPos = currentPos;
     }
 
+    private void FixedUpdate()
+    {
+        UpdateMovement(_inputControllerService.Accelerate);
+    }
+
     public override void UpdateMovement(bool accelerate)
     {
-        if(!accelerate)return;
+        if (!accelerate)
+        {
+            if(rb2d.velocity.magnitude ==0)return;
+            Vector2 oppositeDirection;
+            oppositeDirection = -rb2d.velocity.normalized;
+            rb2d.AddForce(oppositeDirection * DecelerationSpeed);
+            return;
+        }
         rb2d.AddForce(transform.up * AccelerationSpeed);
         rb2d.velocity = Vector2.ClampMagnitude(rb2d.velocity, MaxSpeed);
     }
