@@ -12,11 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f24da5273794e95894bea0deab06ce, type: 3}
   m_Name: AsteroidsInstaller
   m_EditorClassIdentifier: 
+  gameLevels:
+    Levels:
+    - meteorsAmount: 1
+      spaceShipsAmount: 0
+    - meteorsAmount: 2
+      spaceShipsAmount: 0
+    - meteorsAmount: 4
+      spaceShipsAmount: 0
+    - meteorsAmount: 4
+      spaceShipsAmount: 1
+    - meteorsAmount: 5
+      spaceShipsAmount: 2
+    - meteorsAmount: 8
+      spaceShipsAmount: 2
   playerMovementSettings:
-    <AccelerationSpeed>k__BackingField: 0
-    <DecelerationSpeed>k__BackingField: 0
-    <MaxSpeed>k__BackingField: 0
-    <RotationSpeed>k__BackingField: 0
+    <AccelerationSpeed>k__BackingField: 5
+    <DecelerationSpeed>k__BackingField: 5
+    <MaxSpeed>k__BackingField: 5
+    <RotationSpeed>k__BackingField: 150
   gameAssets:
     PlayerShipPrefab: {fileID: 9069781640288666224, guid: 790db0fba3bfb4d5f99e8c555cc749a2, type: 3}
     LargeMeteor: {fileID: 8997597410576989008, guid: 32565678cf8c74b7f8de132caaf7a029, type: 3}

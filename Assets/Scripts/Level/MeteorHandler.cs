@@ -15,28 +15,32 @@ public class MeteorHandler : MonoBehaviour
     private Meteor.SmallMeteor smallMeteorFactory;
 
 
-    private List<Meteor> activeMeteors;
+    private List<IMeteor> activeMeteors = new List<IMeteor>();
     private LevelHandler _levelHandler;
+
+    [Inject] private IGameManager iGameManager;
     
     public void Init(LevelHandler levelHandler)
     {
         this._levelHandler = levelHandler;
     }
-    public void Setup(int levelCount)
+    public void Setup(AsteroidsInstaller.GameLevels.LevelData levelData)
     {
 
-        SpawnMeteors(largeMeteorFactory,levelCount + 5,Vector2.zero);
+        activeMeteors.Clear();
+        SpawnMeteors(largeMeteorFactory,levelData.meteorsAmount,levelData.spaceShipsAmount,Vector2.zero);
     }
 
-    private void SpawnMeteors(PlaceholderFactory<Meteor> meteorFactory, int amount,Vector2 newPos)
+    private void SpawnMeteors(PlaceholderFactory<Meteor> meteorFactory, int meteorCount,int spaceShipsCount,Vector2 newPos)
     {
-        for (int i = 0; i < amount; i++)
+        for (int i = 0; i < meteorCount; i++)
         {
             var meteor = meteorFactory.Create();
             _levelHandler.AddMovementEntity(meteor);
             if (newPos == Vector2.zero)
                 meteor.transform.position = GetRandomPositionWithinBounds(Screen.width, Screen.height);
             else meteor.transform.position = newPos;
+            activeMeteors.Add((IMeteor)meteor);
             meteor.OnMeteorDestroyed += ProcessDestroyedMeteor;
         }
     }
@@ -44,21 +48,27 @@ public class MeteorHandler : MonoBehaviour
     
     private void ProcessDestroyedMeteor(IMeteor meteor,Vector2 destroyedPos)
     {
-       
-        meteor.OnMeteorDestroyed -= ProcessDestroyedMeteor;
+        if(activeMeteors.Count<=0)return;
         
+        meteor.OnMeteorDestroyed -= ProcessDestroyedMeteor;
+        if (activeMeteors.Contains(meteor))
+            activeMeteors.Remove(meteor);
         switch (meteor.meteorSize)
         {
             case IMeteor.MeteorSize.Small:
                 break;
             case IMeteor.MeteorSize.Medium:
-                SpawnMeteors(smallMeteorFactory,2,destroyedPos);
+                SpawnMeteors(smallMeteorFactory,2,0,destroyedPos);
                 break;
             case IMeteor.MeteorSize.Large:
-                SpawnMeteors(mediumMeteorFactory,2, destroyedPos);
+                SpawnMeteors(mediumMeteorFactory,2,0, destroyedPos);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
+        }
+        if (activeMeteors.Count <= 0)
+        {
+            iGameManager.SetState(GameState.LevelCompleted);
         }
     }
     Vector2 GetRandomPositionWithinBounds(float screenWidth, float screenHeight)

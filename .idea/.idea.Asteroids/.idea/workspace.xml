@@ -5,16 +5,195 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c1412de-d3ef-4d0c-bd61-bc9fb73d1386" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HealthIcon.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HealthIcon.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Asteroids/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asteroids/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Projectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Projectile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DI Installers/AsteroidsInstaller.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DI Installers/AsteroidsInstaller.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DI Installers/AsteroidsInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DI Installers/AsteroidsInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DI Installers/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DI Installers/GameInstaller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/MovingEntityData/Opponent/MediumMeteor.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/MovingEntityData/Opponent/MediumMeteor.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/MovingEntityData/Player/PlayerData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/MovingEntityData/Player/PlayerData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/LevelHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/LevelHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/MeteorHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/MeteorHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ILevelService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/ILevelService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/LevelService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/LevelService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Opponent/Meteor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Opponent/Meteor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_005.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_005.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_006.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_006.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_007.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_007.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_008.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_008.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_009.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_009.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_010.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_010.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_011.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_011.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_012.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_012.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_013.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_013.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_014.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_014.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_015.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_015.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_016.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_016.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_017.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_017.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_018.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_018.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_019.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_019.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_020.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_020.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_021.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_021.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_022.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_022.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_023.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_023.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_024.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_024.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_025.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_025.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_026.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_026.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_027.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_027.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_028.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_028.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_029.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_029.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_030.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_030.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_031.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_031.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_032.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_032.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_033.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_033.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_034.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_034.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_035.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_035.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_036.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_036.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_037.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_037.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_038.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_038.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_039.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_039.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_040.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_040.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_041.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_041.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_042.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_042.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_043.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_043.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_044.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_044.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_045.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_045.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_046.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_046.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_047.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_047.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_048.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_048.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_049.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_049.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_050.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_050.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_051.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_051.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_052.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_052.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_053.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_053.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_054.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_054.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_055.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_055.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_056.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_056.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_057.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_057.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_058.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_058.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_059.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_059.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_060.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_060.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_061.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_061.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_062.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_062.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_063.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_063.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_064.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_064.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_065.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_065.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_066.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_066.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_067.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_067.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_068.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_068.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_069.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_069.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_070.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_070.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_071.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_071.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_072.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_072.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_073.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_073.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_074.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_074.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_075.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_075.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_076.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_076.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_077.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_077.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_078.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_078.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_079.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_079.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_080.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_080.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_081.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_081.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_082.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_082.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_083.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_083.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_084.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_084.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_085.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_085.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_086.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_086.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_087.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_087.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_088.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_088.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_089.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_089.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_090.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_090.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_091.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_091.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_092.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_092.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_093.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_093.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_094.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_094.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_095.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_095.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_096.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_096.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_097.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_097.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_098.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Parts/spaceParts_098.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_001.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_001.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_002.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_002.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_003.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_003.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_004.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_004.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_005.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_005.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_006.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_006.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_007.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_007.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_008.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_008.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_009.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_009.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_010.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_010.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_011.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_011.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_012.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_012.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_013.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_013.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_014.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_014.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_015.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_015.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_016.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_016.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_017.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_017.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_018.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_018.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_019.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_019.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_020.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_020.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_021.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_021.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_022.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_022.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_023.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_023.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_024.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_024.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_025.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_025.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_026.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_026.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_027.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_027.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_028.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_028.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_029.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_029.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_030.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_030.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_031.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rocket parts/spaceRocketParts_031.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rockets/spaceRockets_001.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rockets/spaceRockets_001.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rockets/spaceRockets_002.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rockets/spaceRockets_002.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rockets/spaceRockets_003.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rockets/spaceRockets_003.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rockets/spaceRockets_004.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Rockets/spaceRockets_004.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Ships/spaceShips_001.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Ships/spaceShips_001.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Ships/spaceShips_002.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Ships/spaceShips_002.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Ships/spaceShips_003.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Ships/spaceShips_003.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Ships/spaceShips_004.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Ships/spaceShips_004.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Ships/spaceShips_005.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Ships/spaceShips_005.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Ships/spaceShips_006.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Ships/spaceShips_006.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Ships/spaceShips_007.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Ships/spaceShips_007.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Ships/spaceShips_008.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Ships/spaceShips_008.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Ships/spaceShips_009.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Ships/spaceShips_009.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_001.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_001.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_002.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_002.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_003.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_003.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_004.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_004.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_005.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_005.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_006.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_006.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_007.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_007.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_008.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_008.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_009.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_009.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_010.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_010.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_011.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_011.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_012.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_012.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_013.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_013.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_014.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_014.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_015.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_015.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_016.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_016.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_017.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_017.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_018.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_018.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_019.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_019.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_020.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_020.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_021.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_021.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_022.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_022.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_023.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_023.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_024.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_024.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_025.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_025.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_026.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_026.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_027.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_027.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_028.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_028.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_029.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_029.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_030.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_030.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_031.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/PNG/Sprites/Station/spaceStation_031.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/Preview.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/Preview.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/Preview_KenneyNL.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/Preview_KenneyNL.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/Sample.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/Sample.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/Spritesheet/spaceShooter2_spritesheet.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/Spritesheet/spaceShooter2_spritesheet.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/Spritesheet/spaceShooter2_spritesheet_2X.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/kenney_spaceShooterExtension/Spritesheet/spaceShooter2_spritesheet_2X.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +219,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75e90091ee3d480982567c62231bfc49175400/af/c5014978/IMGUIContainer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8f2b770c4a1b401a99ba9ed80a5c09b9469200/2b/3d564357/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8f2b770c4a1b401a99ba9ed80a5c09b9469200/56/f3db39b4/AsyncVoidMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8f2b770c4a1b401a99ba9ed80a5c09b9469200/5c/3714f6f8/RuntimeMethodInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8f2b770c4a1b401a99ba9ed80a5c09b9469200/86/660982ee/ValueType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8f2b770c4a1b401a99ba9ed80a5c09b9469200/f1/644a7b02/CancellationTokenSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/da2989d8790945c48ab1a596da5c753994ae00/68/f85a7738/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
@@ -54,28 +234,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "XThreadsFramesViewSplitterKey": "0.28338137",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.28338137&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/alexanderbrierlychramer/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
-      "/Users/alexanderbrierlychramer/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
-      "/Users/alexanderbrierlychramer/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/alexanderbrierlychramer/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/alexanderbrierlychramer/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/alexanderbrierlychramer/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$USER_HOME$/Desktop/Asteroids/ast.app/Contents/MacOS/Asteroids" />
@@ -111,10 +291,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="88640">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="99254">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="88640" />
+      <option name="pid" value="99254" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -150,19 +330,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/MovingEntities/ShootingMovementEntity.cs</url>
-          <line>18</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/ShootingMovementEntity.cs" initialLine="18" containingFunctionPresentation="Method 'Construct'">
-            <startOffsets>
-              <option value="420" />
-            </startOffsets>
-            <endOffsets>
-              <option value="456" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Scripts/Installers/GameInstaller.cs</url>
           <line>12</line>
@@ -203,43 +370,69 @@
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Level/LevelHandler.cs</url>
+          <line>49</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Level/LevelHandler.cs" initialLine="43" containingFunctionPresentation="Method 'SetupLevel'">
+            <startOffsets>
+              <option value="1074" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1128" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Managers/LevelService.cs</url>
+          <line>16</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Managers/LevelService.cs" initialLine="16" containingFunctionPresentation="Method 'GetCurrentLevel'">
+            <startOffsets>
+              <option value="513" />
+            </startOffsets>
+            <endOffsets>
+              <option value="547" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Level/MeteorHandler.cs</url>
-          <line>47</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Level/MeteorHandler.cs" initialLine="47" containingFunctionPresentation="Method 'ProcessDestroyedMeteor'">
+          <line>54</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Level/MeteorHandler.cs" initialLine="50" containingFunctionPresentation="Method 'ProcessDestroyedMeteor'">
             <startOffsets>
-              <option value="1339" />
+              <option value="1737" />
             </startOffsets>
             <endOffsets>
-              <option value="1390" />
+              <option value="1763" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="34" />
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/MovingEntities/Player/PlayerShip.cs</url>
-          <line>43</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Player/PlayerShip.cs" initialLine="42" containingFunctionPresentation="Method 'Update'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Level/MeteorHandler.cs</url>
+          <line>29</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Level/MeteorHandler.cs" initialLine="29" containingFunctionPresentation="Method 'Setup'">
             <startOffsets>
-              <option value="1024" />
+              <option value="733" />
             </startOffsets>
             <endOffsets>
-              <option value="1060" />
+              <option value="830" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="35" />
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/HealthCounterController.cs</url>
-          <line>35</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/UI/HealthCounterController.cs" initialLine="35" containingFunctionPresentation="Method 'SetupIcons'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Level/LevelHandler.cs</url>
+          <line>36</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Level/LevelHandler.cs" initialLine="36" containingFunctionPresentation="Method 'StartLevel'">
             <startOffsets>
-              <option value="900" />
+              <option value="854" />
             </startOffsets>
             <endOffsets>
-              <option value="947" />
+              <option value="880" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="36" />
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

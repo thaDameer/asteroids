@@ -1,10 +1,12 @@
+using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Zenject;
 
 public class GameInstaller : MonoInstaller
 {
-    [SerializeField] private PlayerShip _playerShip;
+    
+    [SerializeField] private GameManager gameManager;
     [SerializeField] private LevelService levelService;
     [FormerlySerializedAs("assetsService")] [SerializeField] private BulletSpawner bulletSpawner;
 
@@ -18,10 +20,10 @@ public class GameInstaller : MonoInstaller
     [Inject] private AsteroidsInstaller.PlayerMovementVariables _playerMovementVariables;
     public override void InstallBindings()
     {
+        Container.Bind<IGameManager>().To<GameManager>().FromInstance(gameManager);
         Container.Bind<IControllerService>().To<KeyboardControls>().AsSingle();
         Container.Bind<ILevelService>().To<LevelService>().FromInstance(levelService);
         Container.Bind<IBulletSpawner>().To<BulletSpawner>().FromInstance(bulletSpawner);
-
         
         Container.BindFactory<PlayerShip, PlayerShip.Factory>().FromComponentInNewPrefab(settings.PlayerShipPrefab);
         Container.BindFactory<ShootingMovementEntity,ShootingMovementEntity.Factory>().FromFactory<ShootingMovementEntity.Factory>();

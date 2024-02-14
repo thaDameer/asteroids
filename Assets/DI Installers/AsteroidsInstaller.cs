@@ -7,9 +7,22 @@ using Zenject;
 [CreateAssetMenu(fileName = "AsteroidsInstaller", menuName = "Installers/AsteroidsInstaller")]
 public class AsteroidsInstaller : ScriptableObjectInstaller<AsteroidsInstaller>
 {
+    [SerializeField]private GameLevels gameLevels;
+    [Space]
     [SerializeField] private PlayerMovementVariables playerMovementSettings;
     [SerializeField] private GameAssets gameAssets;
     
+    [Serializable]
+    public class GameLevels
+    {
+        public LevelData[] Levels;
+        [Serializable]
+        public class LevelData
+        {
+            [FormerlySerializedAs("meteorAmount")] [FormerlySerializedAs("MeteorsToSpawn")] public int meteorsAmount;
+            [FormerlySerializedAs("spaceShipsCount")] [FormerlySerializedAs("SpaceShips")] public int spaceShipsAmount;
+        }
+    }
     
     [Serializable]
     public class PlayerMovementVariables
@@ -32,6 +45,9 @@ public class AsteroidsInstaller : ScriptableObjectInstaller<AsteroidsInstaller>
     public override void InstallBindings()
     {
         Container.BindInstance(playerMovementSettings);
+        Container.BindInstance(gameLevels);
         Container.BindInstance(gameAssets);
     }
+
+    
 }

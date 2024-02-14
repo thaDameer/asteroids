@@ -4,39 +4,56 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class LevelHandler : MonoBehaviour
+public class LevelHandler : MonoBehaviour,IObserver
 {
     private Camera camera;
     private List<MovementEntity> levelEntities = new List<MovementEntity>();
-    private ILevelService _levelService;
-
     [SerializeField] private MeteorHandler _meteorHandler;
+
+    #region Services
+
+    [Inject]
+    private ILevelService _levelService;
     [Inject]
     private PlayerShip.Factory playerSpawnFactory;
-    
+
+    private IGameManager iGameManager;
     [Inject]
-    public void Construct(ILevelService levelService)
+    public void Construct(IGameManager gameManager)
     {
-        this._levelService = levelService;
+        iGameManager = gameManager;
+        gameManager.RegisterObserver(this);
     }
     
+    #endregion
 
-
+    public void Notify(GameState gameState)
+    {
+        if(gameState == GameState.Playing)
+            StartLevel();
+    }
+    private void StartLevel()
+    {
+        _meteorHandler.Init(this);
+        SetupLevel();   
+    }
     private void Start()
     {
         camera = Camera.main;
-        _meteorHandler.Init(this);
-        SetupLevel();
+        
     }
-    
+
+    private PlayerShip currentPlayer;
    
     public void SetupLevel()
     {
-        _meteorHandler.Setup(_levelService.CurrentLevel);
-        var clone =playerSpawnFactory.Create();
-        clone.transform.position =Vector3.zero;
-        
-        clone.transform.parent = transform;
+        _meteorHandler.Setup(_levelService.GetCurrentLevel());
+        if (currentPlayer == null)
+        {
+            currentPlayer =playerSpawnFactory.Create();
+            currentPlayer.transform.position =Vector3.zero;
+            currentPlayer.transform.parent = transform;
+        }
         foreach (Transform transform in transform)
         {
             if (transform.TryGetComponent(out MovementEntity movingEntity))
@@ -90,14 +107,10 @@ public class LevelHandler : MonoBehaviour
             else if (value < 0 - screenPadding)
                 return 1 + screenPadding;
             return value;
-            //
-            // value = value switch
-            // {
-            //     > 1 => 0+0.1f,
-            //     < 0 => 1-0.1f,
-            //     _ => value
-            // };
-            // return value;
+            
         }
     }
+
+
+
 }

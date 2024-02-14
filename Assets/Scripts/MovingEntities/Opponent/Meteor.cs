@@ -44,9 +44,7 @@ public class Meteor : MovementEntity,IDestructable,IMeteor
     }
     public void Died()
     {
-        
         Destroy(gameObject);
-   
     } 
     
     public void TakeDamage(int dmg)
