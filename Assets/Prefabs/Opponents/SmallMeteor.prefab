@@ -94,8 +94,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5126908734812224970}
   - component: {fileID: 5372201888480331449}
-  - component: {fileID: 8997597410576989008}
   - component: {fileID: 765458593274876158}
+  - component: {fileID: 6114491220119709379}
   m_Layer: 7
   m_Name: SmallMeteor
   m_TagString: Untagged
@@ -146,23 +146,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8997597410576989008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3204602057944305767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15900d330f4584008829166f84fa81ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <MovementEntityData>k__BackingField: {fileID: 11400000, guid: dbfa2ec874ad2408a8ae6acd31fdece9, type: 2}
-  <RotationTarget>k__BackingField: {fileID: 1004677779264830677}
-  <meteorSize>k__BackingField: 0
-  <SpriteRenderer>k__BackingField: {fileID: 2594662559090139948}
-  <MaxHealth>k__BackingField: 1
 --- !u!60 &765458593274876158
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -239,3 +222,21 @@ PolygonCollider2D:
       - {x: 0.69, y: -1.045}
       - {x: 0.77, y: -0.935}
   m_UseDelaunayMesh: 0
+--- !u!114 &6114491220119709379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3204602057944305767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883fc85be8a34737bea1be659de09ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <RotationTarget>k__BackingField: {fileID: 1004677779264830677}
+  <SpriteRenderer>k__BackingField: {fileID: 2594662559090139948}
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  collisionRadius: 1

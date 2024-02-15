@@ -1,64 +1,74 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using Zenject;
 
-public class GameManager : MonoBehaviour, IGameManager
+public class GameManager : MonoBehaviour, IObserver,IShipLifeCounter
 {
-    private List<IObserver> observers = new List<IObserver>();
-    private GameState currentState;
+    private IObserverService _observerService;
+    public int ShipsLeft { get; set; }
+    public int MaxShips { get; set; }
+
+    [Inject] private ILevelService _levelService;
+
+    [Inject] private IScoringService _scoringService;
+    public void ShipDestroyed()
+    {
+        ShipsLeft -= 1;
+        OnLifeCountChanged?.Invoke(ShipsLeft);
+        if (ShipsLeft == 0)
+        {
+            _observerService.SetState(GameState.GameOver);
+        }
+        else
+        {
+            _observerService.SetState(GameState.Playing);
+        }
+    }
+
+    public Action<int> OnLifeCountChanged { get; set; }
+
+    [Inject]
+    public void Construct(IObserverService iObserverService)
+    {
+        _observerService = iObserverService;
+        iObserverService.RegisterObserver(this);
+    }
 
     private void Start()
     {
-        SetState(GameState.MainMenu);
+        _observerService.SetState(GameState.MainMenu);
+       
+    }
+
+    
+    public void Notify(GameState gameState)
+    {
+        if(gameState == GameState.StartRun)
+            StartNewRun();
+        
+    }
+
+    private void StartNewRun()
+    {
+        _levelService.CurrentLevel = 0;
+        ShipsLeft = 3;
+        MaxShips = 3;
+        _scoringService.ResetScore();
+        _scoringService.UpdateGainedScore(0);
+        OnLifeCountChanged?.Invoke(ShipsLeft);
     }
 
    
-    #region Oberver Logic
-
-    public void RegisterObserver(IObserver observer)
-    {
-        if(!observers.Contains(observer))
-            observers.Add(observer);
-    }
-
-    public void UnregisterObserver(IObserver observer)
-    {
-        if (observers.Contains(observer))
-            observers.Remove(observer);
-    }
-
-    public void SetState(GameState gameState)
-    {
-        currentState = gameState;
-        foreach (var observer in observers)
-        {
-            observer.Notify(currentState);
-        }
-    }
-    
-
-    #endregion
+ 
 }
 
-public interface IObserver
+public interface IShipLifeCounter
 {
-    public void Notify(GameState gameState);
-}
-
-public enum GameState
-{
-    MainMenu,
-    Playing,
-    LevelCompleted,
-    Death
-}
-public interface IGameManager
-{
-    public void RegisterObserver(IObserver observer);
-    public void UnregisterObserver(IObserver observer);
-    public void SetState(GameState gameState);
-
-
+    public int ShipsLeft { get; set; }
+    public int MaxShips { get; set; }
+    public void ShipDestroyed();
+    public Action<int> OnLifeCountChanged { get; set; }
+    public static Action OnShipDestroyed;
 }

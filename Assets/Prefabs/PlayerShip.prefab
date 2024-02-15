@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed05853cb1de4311bf8b8af8b7975c2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MovementEntityData>k__BackingField: {fileID: 11400000, guid: 981682d6e982a4f12958ac19b42fe4af, type: 2}
   <RotationTarget>k__BackingField: {fileID: 7960592631071143642}
   <ProjectileData>k__BackingField:
     ShootSpeed: 20
@@ -55,6 +54,7 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 128
   rb2d: {fileID: 241739961655011504}
+  <SpriteRenderer>k__BackingField: {fileID: 7502058313299471132}
 --- !u!50 &241739961655011504
 Rigidbody2D:
   serializedVersion: 4

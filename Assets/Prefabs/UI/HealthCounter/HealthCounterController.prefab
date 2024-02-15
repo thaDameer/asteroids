@@ -54,8 +54,8 @@ MonoBehaviour:
     m_Left: 0
     m_Right: 0
     m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 4
+    m_Bottom: 10
+  m_ChildAlignment: 7
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -77,6 +77,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updateInEditor: 0
+  parameters:
+    MaxShips: 0
+    ShipsLeft: 0
+    UpdateCounter: 0
   iconBlueprint: {fileID: 5765272992706844645}
 --- !u!1001 &1264910699987078382
 PrefabInstance:

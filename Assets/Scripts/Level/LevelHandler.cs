@@ -1,59 +1,101 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using Zenject;
 
 public class LevelHandler : MonoBehaviour,IObserver
 {
-    private Camera camera;
-    private List<MovementEntity> levelEntities = new List<MovementEntity>();
-    [SerializeField] private MeteorHandler _meteorHandler;
-
-    #region Services
-
     [Inject]
-    private ILevelService _levelService;
+    private Camera camera;
+    private HashSet<MovementEntity> levelEntities = new HashSet<MovementEntity>();
+    [Inject] private IEnemyService _enemyService;
+    private PlayerShip currentShip;
+    #region Services
+    
     [Inject]
     private PlayerShip.Factory playerSpawnFactory;
-
-    private IGameManager iGameManager;
+    
     [Inject]
-    public void Construct(IGameManager gameManager)
+    public void Construct(IObserverService observerService)
     {
-        iGameManager = gameManager;
-        gameManager.RegisterObserver(this);
+        observerService.RegisterObserver(this);
+     
     }
+    [Inject]
+    private ILevelService _levelService;
+
     
     #endregion
 
-    public void Notify(GameState gameState)
+    [Inject] private IShipLifeCounter _shipLifeCounter;
+    private void Awake()
     {
-        if(gameState == GameState.Playing)
-            StartLevel();
-    }
-    private void StartLevel()
-    {
-        _meteorHandler.Init(this);
-        SetupLevel();   
-    }
-    private void Start()
-    {
-        camera = Camera.main;
-        
+        _shipLifeCounter.OnLifeCountChanged += TrySpawnNewShip;
+        _levelService.OnNewLevelStarted += StartNewLevel;
     }
 
-    private PlayerShip currentPlayer;
+    private void OnDestroy()
+    {
+        _shipLifeCounter.OnLifeCountChanged -= TrySpawnNewShip;
+        _levelService.OnNewLevelStarted -= StartNewLevel;
+    }
+
+    private void TrySpawnNewShip(int counter)
+    {
+        if (counter > 0)
+        {
+            StartCoroutine(DelayedRespawn_CR());
+            IEnumerator DelayedRespawn_CR()
+            {
+                yield return new WaitForSeconds(1.5f);
+                SpawnPlayerShip();
+            }
+        }
+    }
+    public void Notify(GameState gameState)
+    {
+       
+    }
+
+    private void DelayedStart()
+    {
+        StartCoroutine(DelayedRunStart_CO());
+    }
+    
+    
+    IEnumerator DelayedRunStart_CO()
+    {
+        yield return new WaitForSeconds(1f);
+        StartNextLevel();
+    }
+
+   
+    private int currentPlayingLevel;
+    private void StartNextLevel()
+    { 
+
+        _enemyService.Init(this);
+        SetupLevel();   
+    }
+
+    private void StartNewLevel(int levelIndex)
+    {
+        StartNextLevel();
+    }
+    
    
     public void SetupLevel()
     {
-        _meteorHandler.Setup(_levelService.GetCurrentLevel());
-        if (currentPlayer == null)
+        currentPlayingLevel = _levelService.CurrentLevel;
+        if (currentPlayingLevel == 0)
         {
-            currentPlayer =playerSpawnFactory.Create();
-            currentPlayer.transform.position =Vector3.zero;
-            currentPlayer.transform.parent = transform;
+            currentPlayingLevel = -1;
+            _levelService.ResetLevelProgression();
         }
+        _enemyService.Setup(_levelService.GetCurrentLevel());
+        
         foreach (Transform transform in transform)
         {
             if (transform.TryGetComponent(out MovementEntity movingEntity))
@@ -62,11 +104,21 @@ public class LevelHandler : MonoBehaviour,IObserver
             }
         }
         
-        StartCoroutine(ProcessEntitiesInBounds());
+        if(entitiesInBounds == null)
+            entitiesInBounds = StartCoroutine(ProcessEntitiesInBounds());
     }
 
+    private Coroutine entitiesInBounds;
+    private void SpawnPlayerShip()
+    {
+        currentShip =playerSpawnFactory.Create();
+        currentShip.transform.position =Vector3.zero;
+        currentShip.transform.parent = transform;
+    
+    }
     public void AddMovementEntity(MovementEntity movementEntity)
     {
+        movementEntity.transform.parent = transform;
         levelEntities.Add(movementEntity);
     }
     IEnumerator ProcessEntitiesInBounds()
@@ -74,11 +126,13 @@ public class LevelHandler : MonoBehaviour,IObserver
         var wfs = new WaitForSeconds(0.2f);
         while (true)
         {
+            levelEntities.RemoveWhere(x => x == null);
             foreach (var movingEntity in levelEntities)
             {
-                if(movingEntity)
+                if(movingEntity != null)
                     UpdateEntityWithinBounds(movingEntity);
             }
+
             yield return wfs;
         }
     }
@@ -112,5 +166,8 @@ public class LevelHandler : MonoBehaviour,IObserver
     }
 
 
-
+    public void LevelCompleted()
+    {
+        _levelService.LevelCompleted();
+    }
 }

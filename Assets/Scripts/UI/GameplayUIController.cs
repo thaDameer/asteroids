@@ -12,8 +12,8 @@ public class GameplayUIController : MonoBehaviour
     {
         healthCounterController.Setup(new HealthCounterController.Parameters
         {
-            LivesLeft = 3,
-            TotalLives = 3,
+            ShipsLeft = 3,
+            MaxShips = 3,
             UpdateCounter = false
         });
     }

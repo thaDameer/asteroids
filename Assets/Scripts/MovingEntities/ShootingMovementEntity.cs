@@ -8,12 +8,17 @@ using Zenject;
 
 public abstract class ShootingMovementEntity : MovementEntity
 {
-    
-    [field: SerializeField]public ProjectileData ProjectileData { get; set; }
+
+    [field: SerializeField] public ProjectileData ProjectileData { get; set; }
 
     private IBulletSpawner _bulletSpawner;
 
-    [Inject]
+    protected void Setup(ProjectileData projectileData)
+    {
+        ProjectileData = projectileData;
+    }
+
+[Inject]
     public void Construct(IBulletSpawner bulletSpawner)
     {
         this._bulletSpawner = bulletSpawner;
@@ -26,7 +31,7 @@ public abstract class ShootingMovementEntity : MovementEntity
 
         _bulletSpawner.ShootPlayerBullet(shootingData);
     }
-    public class Factory : PlaceholderFactory<ShootingMovementEntity> { }
+    
 }
 [Serializable]
 public struct ProjectileData

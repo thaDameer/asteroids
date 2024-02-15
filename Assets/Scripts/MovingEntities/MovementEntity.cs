@@ -1,22 +1,32 @@
 
 using UnityEngine;
+using Zenject;
+
 [RequireComponent(typeof(Rigidbody2D))]
 public abstract class MovementEntity : MonoBehaviour
 {
-    [field: SerializeField]public MovementEntityData MovementEntityData { get; set; }
-    public float AccelerationSpeed => MovementEntityData.AccelerationSpeed;
-    public float MaxSpeed => MovementEntityData.MaxSpeed;
-    public float DecelerationSpeed => MovementEntityData.DecelerationSpeed;
+    public float AccelerationSpeed { get; set; }
+    public float MaxSpeed { get; set; }
+    public float DecelerationSpeed { get; set; }
+    public float RotationSpeed { get; set; }
     [field: SerializeField]public Transform RotationTarget { get; set; }
     
-    public float RotationSpeed => MovementEntityData.RotationSpeed;
     public abstract Vector3 MovementDirection { get; set; }
     protected float currentSpeed;
 
-    public void Construct(AsteroidsInstaller.PlayerMovementVariables movementVariables)
+
+    public void Setup(AsteroidsInstaller.MovementEntityData movementEntityData)
     {
-        var t = movementVariables;
+        AccelerationSpeed = movementEntityData.AccelerationSpeed;
+        MaxSpeed = movementEntityData.MaxSpeed;
+        DecelerationSpeed = movementEntityData.DecelerationSpeed;
+        RotationSpeed = movementEntityData.RotationSpeed;
     }
+
+    // public void SetupEntity(AsteroidsInstaller.MovementEntityData data)
+    // {
+    //     AccelerationSpeed = data.AccelerationSpeed
+    // }
     public virtual void UpdateMovement(bool accelerate)
     {
         if (accelerate)

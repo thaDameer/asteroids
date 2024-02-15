@@ -7,8 +7,11 @@ public class GameInstaller : MonoInstaller
 {
     
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private ScoringService scoringService;
+    [SerializeField] private ObserverService observerService;
     [SerializeField] private LevelService levelService;
-    [FormerlySerializedAs("assetsService")] [SerializeField] private BulletSpawner bulletSpawner;
+    [SerializeField] private EnemyService enemyService;
+    [SerializeField] private BulletSpawner bulletSpawner;
 
     private AsteroidsInstaller.GameAssets settings;
     [Inject]
@@ -17,19 +20,22 @@ public class GameInstaller : MonoInstaller
         this.settings = settings;
     }
 
-    [Inject] private AsteroidsInstaller.PlayerMovementVariables _playerMovementVariables;
     public override void InstallBindings()
     {
-        Container.Bind<IGameManager>().To<GameManager>().FromInstance(gameManager);
+        Container.Bind<IObserverService>().To<ObserverService>().FromInstance(observerService);
+        Container.Bind<IScoringService>().To<ScoringService>().FromInstance(scoringService);
         Container.Bind<IControllerService>().To<KeyboardControls>().AsSingle();
         Container.Bind<ILevelService>().To<LevelService>().FromInstance(levelService);
         Container.Bind<IBulletSpawner>().To<BulletSpawner>().FromInstance(bulletSpawner);
+        Container.Bind<Camera>().FromMethod(GetMainCamera).AsSingle();
+        Container.Bind<IShipLifeCounter>().To<GameManager>().FromInstance(gameManager);
+        Container.Bind<IEnemyService>().To<EnemyService>().FromInstance(enemyService);
         
         Container.BindFactory<PlayerShip, PlayerShip.Factory>().FromComponentInNewPrefab(settings.PlayerShipPrefab);
-        Container.BindFactory<ShootingMovementEntity,ShootingMovementEntity.Factory>().FromFactory<ShootingMovementEntity.Factory>();
-        Container.BindFactory<Meteor, Meteor.LargeMeteor>().FromComponentInNewPrefab(settings.LargeMeteor);
-        Container.BindFactory<Meteor, Meteor.MediumMeteor>().FromComponentInNewPrefab(settings.MediumMeteor);
-        Container.BindFactory<Meteor, Meteor.SmallMeteor>().FromComponentInNewPrefab(settings.SmallMeteor);
+        Container.BindFactory<LargeMeteor, LargeMeteor.Factory>().FromComponentInNewPrefab(settings.largeMeteor);
+        Container.BindFactory<MediumMeteor, MediumMeteor.Factory>().FromComponentInNewPrefab(settings.mediumMeteor);
+        Container.BindFactory<SmallMeteor, SmallMeteor.Factory>().FromComponentInNewPrefab(settings.smallMeteor);
+
         //Container.BindFactory<PlayerShip,PlayerShip.Factory>().FromFactory<PlayerShip.Factory>();
         // Container.BindFactory<Projectile, Projectile>()
         //     // This means that any time Asteroid.Factory.Create is called, it will instantiate
@@ -37,5 +43,9 @@ public class GameInstaller : MonoInstaller
         //     .FromComponentInNewPrefab(_settings.AsteroidPrefab)
         //     // We can also tell Zenject what to name the new gameobject here
         //     .WithGameObjectName("Asteroid")
+    }
+    private Camera GetMainCamera(InjectContext context)
+    {
+        return Camera.main;
     }
 }

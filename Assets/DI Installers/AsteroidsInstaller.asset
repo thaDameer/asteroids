@@ -26,13 +26,56 @@ MonoBehaviour:
       spaceShipsAmount: 2
     - meteorsAmount: 8
       spaceShipsAmount: 2
-  playerMovementSettings:
-    <AccelerationSpeed>k__BackingField: 5
-    <DecelerationSpeed>k__BackingField: 5
-    <MaxSpeed>k__BackingField: 5
-    <RotationSpeed>k__BackingField: 150
+  shipData:
+    ProjectileData:
+      ShootSpeed: 20
+      HitDamage: 1
+      TargetLayer:
+        serializedVersion: 2
+        m_Bits: 128
+    MovementEntityData:
+      <AccelerationSpeed>k__BackingField: 3
+      <DecelerationSpeed>k__BackingField: 1
+      <MaxSpeed>k__BackingField: 4
+      <RotationSpeed>k__BackingField: 200
+  LargeMeteor:
+    TargetLayer:
+      serializedVersion: 2
+      m_Bits: 64
+    CollisionRadius: 1
+    Score: 20
+    MovementEntityData:
+      <AccelerationSpeed>k__BackingField: 5
+      <DecelerationSpeed>k__BackingField: 5
+      <MaxSpeed>k__BackingField: 3
+      <RotationSpeed>k__BackingField: 50
+    meteorSize: 2
+  MediumMeteor:
+    TargetLayer:
+      serializedVersion: 2
+      m_Bits: 64
+    CollisionRadius: 0.5
+    Score: 50
+    MovementEntityData:
+      <AccelerationSpeed>k__BackingField: 6
+      <DecelerationSpeed>k__BackingField: 5
+      <MaxSpeed>k__BackingField: 3
+      <RotationSpeed>k__BackingField: 80
+    meteorSize: 1
+  SmallMeteor:
+    TargetLayer:
+      serializedVersion: 2
+      m_Bits: 64
+    CollisionRadius: 0.3
+    Score: 100
+    MovementEntityData:
+      <AccelerationSpeed>k__BackingField: 7
+      <DecelerationSpeed>k__BackingField: 5
+      <MaxSpeed>k__BackingField: 4
+      <RotationSpeed>k__BackingField: 90
+    meteorSize: 0
   gameAssets:
     PlayerShipPrefab: {fileID: 9069781640288666224, guid: 790db0fba3bfb4d5f99e8c555cc749a2, type: 3}
-    LargeMeteor: {fileID: 8997597410576989008, guid: 32565678cf8c74b7f8de132caaf7a029, type: 3}
-    MediumMeteor: {fileID: 8997597410576989008, guid: 118e0e0d50130416e80a5730dadc1ad8, type: 3}
-    SmallMeteor: {fileID: 8997597410576989008, guid: 43c164f86f12245d8a9d71876c713e9f, type: 3}
+    largeMeteor: {fileID: 5484270136046163785, guid: 32565678cf8c74b7f8de132caaf7a029, type: 3}
+    mediumMeteor: {fileID: 8843479358632302621, guid: 118e0e0d50130416e80a5730dadc1ad8, type: 3}
+    smallMeteor: {fileID: 6114491220119709379, guid: 43c164f86f12245d8a9d71876c713e9f, type: 3}

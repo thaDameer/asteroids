@@ -22,24 +22,24 @@ public class MainMenuController : MonoBehaviour,IObserver
     private void Awake()
     {
         howToPlayPanel.gameObject.SetActive(false);
-        playButton.onClick.AddListener(ClickedPlay);
-        howToPlayButton.onClick.AddListener(ClickedHowToPlay);
-        backButton.onClick.AddListener(ClickedBackButton);
+  
     }
 
-    private IGameManager iGameManager;
+  
+    private IObserverService _iObserverService;
 
     [Inject]
-    public void Construct(IGameManager gameManager)
+    public void Construct(IObserverService observerService)
     {
-        iGameManager = gameManager;
-        iGameManager.RegisterObserver(this);
+        _iObserverService = observerService;
+        _iObserverService.RegisterObserver(this);
     }
+
     
 
     public void ClickedPlay()
     {
-        iGameManager.SetState(GameState.Playing);
+        _iObserverService.SetState(GameState.StartRun);
     }
 
     private TweenerCore<Vector3, Vector3, VectorOptions> tweenerCore;
