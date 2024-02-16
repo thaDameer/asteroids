@@ -29,7 +29,7 @@ public class BulletSpawner : MonoBehaviour,IBulletSpawner
     {
         pooledPlayerProjectiles.Release(projectile);
     }
-    private async void Start()
+    private  void Start()
     {
         PreLoadProjectiles();
         pooledPlayerProjectiles = new ObjectPool<Projectile>(CreateShipProjectile, TakeFromPool, ReturnToPool);

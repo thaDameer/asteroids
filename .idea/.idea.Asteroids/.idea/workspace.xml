@@ -5,53 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c1412de-d3ef-4d0c-bd61-bc9fb73d1386" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Opponent/IDestructibleOpponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Opponent/IDestructibleOpponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Opponent/LargeMeteor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Opponent/LargeMeteor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Opponent/MediumMeteor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Opponent/MediumMeteor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Opponent/SmallMeteor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Opponent/SmallMeteor.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Asteroids/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asteroids/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DI Installers/AsteroidsInstaller.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DI Installers/AsteroidsInstaller.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DI Installers/AsteroidsInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DI Installers/AsteroidsInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DI Installers/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DI Installers/GameInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Opponents/LargeMeteor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Opponents/LargeMeteor.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Opponents/MediumMeteor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Opponents/MediumMeteor.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Opponents/SmallMeteor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Opponents/SmallMeteor.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerShip.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerShip.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/GameplayView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/GameplayView.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/HealthCounter/HealthCounterController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/HealthCounter/HealthCounterController.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/MainMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/MainMenu.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Projectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Projectile.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/MovingEntityData/Player/PlayerData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/MovingEntityData/Player/PlayerData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Factories/BulletSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Factories/BulletSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HelperClasses/SpriteHelperClass.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HelperClasses/SpriteHelperClass.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputControll/IControllerService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputControll/IControllerService.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/LevelHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/LevelHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/MeteorHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/MeteorHandler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ILevelService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ILevelService.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/LevelService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/LevelService.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ManagerBase.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/ManagerBase.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/MovementEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/MovementEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Opponent/Meteor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Opponent/Meteor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Player/PlayerShip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/Player/PlayerShip.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/ShootingMovementEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovingEntities/ShootingMovementEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Projectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GameplayUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GameplayUIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HealthCounterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HealthCounterController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +26,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ControllerBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GameplayUIController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/HealthCounterController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LevelEndController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.21.19/Runtime/AssetReference.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.21.19/Runtime/ResourceManager/AsyncOperations/AsyncOperationHandle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/37b51751e7a84134841e2b994d9061ab172a00/11/494370ae/Object.cs" root0="SKIP_HIGHLIGHTING" />
@@ -115,6 +70,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CodeLensConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -185,7 +141,7 @@
       <workItem from="1707757868388" duration="7818000" />
       <workItem from="1707847512602" duration="10364000" />
       <workItem from="1707946574190" duration="3554000" />
-      <workItem from="1708017813019" duration="21297000" />
+      <workItem from="1708017813019" duration="22863000" />
     </task>
     <servers />
   </component>
@@ -252,6 +208,32 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Projectile.cs</url>
+          <line>29</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Projectile.cs" initialLine="29" containingFunctionPresentation="Method 'Update'">
+            <startOffsets>
+              <option value="1080" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1119" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UI/LevelEndController.cs</url>
+          <line>47</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/UI/LevelEndController.cs" initialLine="47" containingFunctionPresentation="Method 'Notify'">
+            <startOffsets>
+              <option value="1278" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1314" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="117" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

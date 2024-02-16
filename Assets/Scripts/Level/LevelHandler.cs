@@ -1,14 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using System.Linq;
 using UnityEngine;
 using Zenject;
 
 public class LevelHandler : MonoBehaviour,IObserver
 {
     [Inject]
-    private Camera camera;
+    private Camera _camera;
     private HashSet<MovementEntity> levelEntities = new HashSet<MovementEntity>();
     [Inject] private IEnemyService _enemyService;
     private PlayerShip currentShip;
@@ -114,10 +114,11 @@ public class LevelHandler : MonoBehaviour,IObserver
         currentShip =playerSpawnFactory.Create();
         currentShip.transform.position =Vector3.zero;
         currentShip.transform.parent = transform;
-    
+        AddMovementEntity(currentShip);
     }
     public void AddMovementEntity(MovementEntity movementEntity)
     {
+        if(levelEntities.Contains(movementEntity))return;
         movementEntity.transform.parent = transform;
         levelEntities.Add(movementEntity);
     }
@@ -140,7 +141,7 @@ public class LevelHandler : MonoBehaviour,IObserver
     float screenPadding = 0.05f;
     void UpdateEntityWithinBounds(MovementEntity movementEntity)
     {
-        Vector2 viewportPos = camera.WorldToViewportPoint(movementEntity.transform.position);
+        Vector2 viewportPos = _camera.WorldToViewportPoint(movementEntity.transform.position);
 
         float newX = viewportPos.x;
         newX = TryFlipBounds(newX);
@@ -149,7 +150,7 @@ public class LevelHandler : MonoBehaviour,IObserver
 
         if (newX != viewportPos.x || newY != viewportPos.y)
         {
-            var newPos = (Vector2)camera.ViewportToWorldPoint(new Vector3(newX, newY));
+            var newPos = (Vector2)_camera.ViewportToWorldPoint(new Vector3(newX, newY));
             movementEntity.transform.position = newPos;
         }
 

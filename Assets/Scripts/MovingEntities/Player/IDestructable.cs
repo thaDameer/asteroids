@@ -2,8 +2,8 @@ using UnityEngine;
 
 public interface IDestructable
 {
-    [field: SerializeField]public SpriteRenderer SpriteRenderer { get; set; }
-    [field: SerializeField]public abstract int MaxHealth { get; set; }
+    public SpriteRenderer SpriteRenderer { get; set; }
+    public abstract int MaxHealth { get; set; }
     public int CurrentHealth { get; set; }
 
    

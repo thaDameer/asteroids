@@ -31,7 +31,7 @@ public class ObserverService : MonoBehaviour, IObserverService
     
     public void SetState(GameState gameState)
     {
-        if(CurrentState == gameState)return;
+        
         
         CurrentState = gameState;
         foreach (var observer in observers)

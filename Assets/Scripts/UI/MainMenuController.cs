@@ -12,11 +12,8 @@ using Zenject;
 public class MainMenuController : MonoBehaviour,IObserver
 {
 
-    
-    [SerializeField] private Button playButton;
-    [SerializeField] private Button howToPlayButton;
-    [SerializeField] private Button backButton;
 
+    [SerializeField] private GameObject uiContainer;
     [SerializeField] private CanvasGroup howToPlayPanel;
     [SerializeField] private CanvasGroup canvasGroup;
     private void Awake()
@@ -68,7 +65,7 @@ public class MainMenuController : MonoBehaviour,IObserver
 
     public void Notify(GameState gameState)
     {
-        gameObject.SetActive(gameState == GameState.MainMenu);
+        uiContainer.SetActive(gameState == GameState.MainMenu);
     }
 
     private void Hide()
