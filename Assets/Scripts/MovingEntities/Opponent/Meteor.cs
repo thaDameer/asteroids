@@ -9,6 +9,11 @@ public class Meteor : MovementEntity,IDestructable,IDestructibleOpponent
     public GameObject DestroyedGameObject => gameObject;
     public Vector2 DestroyedPos { get; set; }
     public int Score { get; set; }
+    public void ClearObject()
+    {
+        Destroy(gameObject);
+    }
+
     public override Vector3 MovementDirection { get; set; }
     private Vector2 rotateDir;
     [field: SerializeField]public SpriteRenderer SpriteRenderer { get; set; }
@@ -64,11 +69,8 @@ public class Meteor : MovementEntity,IDestructable,IDestructibleOpponent
         if(CurrentHealth>0) return;
         DestroyedPos = transform.position;
         _enemyService.RemoveDestructible(this);
-        SpriteHelperClass.Flash(SpriteRenderer,Color.black,flashDuration,2,(() =>
-        {
-            Died();
-        }));
-        
+        SpriteHelperClass.Flash(SpriteRenderer, Color.black, flashDuration, 2);
+        Invoke("Died",flashDuration+0.1f);
     }
 
 

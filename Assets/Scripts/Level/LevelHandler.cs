@@ -89,12 +89,13 @@ public class LevelHandler : MonoBehaviour,IObserver
     public void SetupLevel()
     {
         currentPlayingLevel = _levelService.CurrentLevel;
-        if (currentPlayingLevel == 0)
+        bool isFirstLevel = currentPlayingLevel == 0;
+        if (isFirstLevel)
         {
             currentPlayingLevel = -1;
             _levelService.ResetLevelProgression();
         }
-        _enemyService.Setup(_levelService.GetCurrentLevel());
+        _enemyService.Setup(_levelService.GetCurrentLevel(),isFirstLevel);
         
         foreach (Transform transform in transform)
         {

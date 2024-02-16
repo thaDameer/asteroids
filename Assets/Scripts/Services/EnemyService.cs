@@ -26,9 +26,23 @@ public class EnemyService : MonoBehaviour, IEnemyService
     }
 
 
-
-    public void Setup(AsteroidsInstaller.GameLevels.LevelData levelData)
+    private void TryClearLevel()
     {
+        if (_destructibleOpponents.Count > 0)
+        {
+            foreach (var iDestructibleOpponent in _destructibleOpponents)
+            {
+                iDestructibleOpponent.ClearObject();
+            }
+            _destructibleOpponents.Clear();
+        }
+    }
+    public void Setup(AsteroidsInstaller.GameLevels.LevelData levelData,bool clearLevel = false)
+    {
+        if (clearLevel)
+        {
+            TryClearLevel();
+        }
         if(_destructibleOpponents!=null)
             _destructibleOpponents.Clear();
         SpawnMeteors(largeMeteorFactory,levelData.meteorsAmount,levelData.spaceShipsAmount,Vector2.zero);
@@ -126,7 +140,7 @@ public class EnemyService : MonoBehaviour, IEnemyService
 public interface IEnemyService
 {
     public void Init(LevelHandler levelHandler);
-    public void Setup(AsteroidsInstaller.GameLevels.LevelData levelData);
+    public void Setup(AsteroidsInstaller.GameLevels.LevelData levelData,bool clearLevel);
     List<IDestructibleOpponent> _destructibleOpponents { get; set; }
     public void AddDestructible(IDestructibleOpponent destructibleOpponent);
     public void RemoveDestructible(IDestructibleOpponent destructibleOpponent);
