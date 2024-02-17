@@ -17,15 +17,15 @@ MonoBehaviour:
     - meteorsAmount: 1
       spaceShipsAmount: 0
     - meteorsAmount: 2
-      spaceShipsAmount: 0
-    - meteorsAmount: 4
-      spaceShipsAmount: 0
-    - meteorsAmount: 4
       spaceShipsAmount: 1
+    - meteorsAmount: 4
+      spaceShipsAmount: 2
+    - meteorsAmount: 4
+      spaceShipsAmount: 2
     - meteorsAmount: 5
-      spaceShipsAmount: 2
+      spaceShipsAmount: 3
     - meteorsAmount: 8
-      spaceShipsAmount: 2
+      spaceShipsAmount: 4
   shipData:
     ProjectileData:
       ShootSpeed: 6
@@ -71,6 +71,22 @@ MonoBehaviour:
       <DecelerationSpeed>k__BackingField: 5
       <MaxSpeed>k__BackingField: 4
       <RotationSpeed>k__BackingField: 90
+  SpaceShipData:
+    ProjectileData:
+      ShootSpeed: 5
+      HitDamage: 1
+      TargetLayer:
+        serializedVersion: 2
+        m_Bits: 64
+    minSize: 0.5
+    maxSize: 1
+    MovementEntityData:
+      <AccelerationSpeed>k__BackingField: 5
+      <DecelerationSpeed>k__BackingField: 5
+      <MaxSpeed>k__BackingField: 2
+      <RotationSpeed>k__BackingField: 0
+    Score: 150
+    ShootInterval: 3
   gameAssets:
     PlayerShipPrefab: {fileID: 9069781640288666224, guid: 790db0fba3bfb4d5f99e8c555cc749a2, type: 3}
     largeMeteor: {fileID: 5484270136046163785, guid: 32565678cf8c74b7f8de132caaf7a029, type: 3}

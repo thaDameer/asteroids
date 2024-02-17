@@ -16,14 +16,14 @@ public class Meteor : MovementEntity,IDestructable,IDestructibleOpponent
     [field: SerializeField]public SpriteRenderer SpriteRenderer { get; set; }
    public int MaxHealth { get; set; }
     public int CurrentHealth { get; set; }
-
-    private void ClearAndDestroy()
+ private void ClearAndDestroy()
     {
         enemyService.OnClearAllEnemies -= ClearAndDestroy;
         if(gameObject)
             Destroy(gameObject);
     }
 
+   
     public void Setup<T>(MeteorData<T> meteorData)
     {
         SetupMeteor();

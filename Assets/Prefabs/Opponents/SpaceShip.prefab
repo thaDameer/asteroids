@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5055014928691773546}
   - component: {fileID: 617327416857207706}
   - component: {fileID: 3535724213705803560}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpaceShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4541194940634747972}
   - component: {fileID: 1147543339802971883}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GlassDome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1181647899745868898}
   - component: {fileID: 1173862712054218840}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

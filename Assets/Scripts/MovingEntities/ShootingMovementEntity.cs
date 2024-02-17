@@ -8,10 +8,10 @@ using Zenject;
 
 public abstract class ShootingMovementEntity : MovementEntity
 {
-
+    
     public ProjectileData ProjectileData { get; set; }
 
-    private IProjectileSpawner _projectileSpawner;
+    protected IProjectileSpawner _projectileSpawner;
 
     protected void Setup(ProjectileData projectileData)
     {
@@ -24,7 +24,7 @@ public abstract class ShootingMovementEntity : MovementEntity
         this._projectileSpawner = projectileSpawner;
     }
     
-    public virtual void Shoot()
+    protected virtual void Shoot()
     {
         GlobalProjectileData data =
             new GlobalProjectileData(ProjectileData, transform, transform.up);
@@ -51,6 +51,7 @@ public class GlobalProjectileData
     public float ProjectileDuration;
     public GlobalProjectileData(ProjectileData projectileData,Transform transform, Vector2 dir)
     {
+        
         ProjectileData = projectileData;
         Position = transform.position;
         Rotation = transform.rotation;

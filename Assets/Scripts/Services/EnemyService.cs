@@ -16,10 +16,16 @@ public class EnemyService : MonoBehaviour, IEnemyService
     private MediumMeteor.Factory mediumMeteorFactory;
     [Inject]
     private SmallMeteor.Factory smallMeteorFactory;
+    [Inject]
+    private SpaceShip.Factory spaceShipFactory;
+    
+    
     
     private LevelHandler _levelHandler;
 
     [Inject] private IScoringService _scoringService;
+    public List<IDestructibleOpponent> _destructibleOpponents { get; set; }
+    private HashSet<IDestructibleOpponent> _destructibleOpponentsHash = new HashSet<IDestructibleOpponent>();
     
     public void Init(LevelHandler levelHandler)
     {
@@ -28,11 +34,7 @@ public class EnemyService : MonoBehaviour, IEnemyService
     }
 
 
-    private void TryClearLevel()
-    {
-        OnClearAllEnemies?.Invoke();
-        _destructibleOpponents.Clear();
-    }
+
     public void Setup(AsteroidsInstaller.GameLevels.LevelData levelData,bool clearLevel = false)
     {
         if (clearLevel)
@@ -42,16 +44,18 @@ public class EnemyService : MonoBehaviour, IEnemyService
         if(_destructibleOpponents!=null)
             _destructibleOpponents.Clear();
         SpawnMeteors(largeMeteorFactory,levelData.meteorsAmount,levelData.spaceShipsAmount,Vector2.zero);
+        spaceShipCounter = levelData.spaceShipsAmount;
+    }    private void TryClearLevel()
+    {
+        OnClearAllEnemies?.Invoke();
+        _destructibleOpponents.Clear();
     }
     
-    public List<IDestructibleOpponent> _destructibleOpponents { get; set; }
-    private HashSet<IDestructibleOpponent> _destructibleOpponentsHash = new HashSet<IDestructibleOpponent>();
-
+    
     public void AddDestructible(IDestructibleOpponent destructibleOpponent)
     {
         if (!_destructibleOpponents.Contains(destructibleOpponent))
         {
-
             _destructibleOpponents.Add(destructibleOpponent);
         }   
     }
@@ -61,33 +65,36 @@ public class EnemyService : MonoBehaviour, IEnemyService
         _scoringService.UpdateGainedScore(objectToDestroy.Score);
         _destructibleOpponents.Remove(objectToDestroy);
     }
+
+    private int spaceShipCounter = 0;
     public void RemoveDestructible(IDestructibleOpponent destructibleOpponent)
     {
         if (_destructibleOpponents.Contains(destructibleOpponent))
         {
-
             RemoveIDestructible(destructibleOpponent);
         }
+        if(destructibleOpponent is Meteor)
+            ProcessDestroyedMeteor(destructibleOpponent,destructibleOpponent.DestroyedPos);
+        if(spaceShipCounter>0)
+            TrySpawnSpaceShip(); 
         
-       
-        ProcessDestroyedMeteor(destructibleOpponent,destructibleOpponent.DestroyedPos);
-        _destructibleOpponents.RemoveAll(x => !(x != null));
-        var opponentsLeft = new List<IDestructibleOpponent>();
-        foreach (var opponent in _destructibleOpponents)
-        {
-            if (opponent != null)
-            {
-                opponentsLeft.Add(opponent);
-            }
-        }
-        
-        _destructibleOpponents = opponentsLeft;
+        _destructibleOpponents.RemoveAll(x=> x == null);
         if(_destructibleOpponents.Count <= 0)
             _levelHandler.LevelCompleted();
     }
 
-
-
+    private void TrySpawnSpaceShip()
+    {
+        int random = Random.Range(0, 2);
+        if (random == 0)
+        {
+            var spaceShip = spaceShipFactory.Create();
+            spaceShip.Setup();
+            AddDestructible(spaceShip);
+            _levelHandler.AddMovementEntity(spaceShip);
+            spaceShipCounter--;
+        }
+    }
     private void SpawnMeteors<T>(PlaceholderFactory<T> meteorFactory, int meteorCount,int spaceShipsCount,Vector2 newPos) where T : Meteor
     {
         for (int i = 0; i < meteorCount; i++)
@@ -100,8 +107,6 @@ public class EnemyService : MonoBehaviour, IEnemyService
             AddDestructible(meteor);
         }
     }
-    
-    
     private void ProcessDestroyedMeteor(IDestructibleOpponent destructibleOpponent,Vector2 destroyedPos)
     {
         switch (destructibleOpponent)

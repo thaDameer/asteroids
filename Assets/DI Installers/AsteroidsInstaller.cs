@@ -18,7 +18,7 @@ public class AsteroidsInstaller : ScriptableObjectInstaller<AsteroidsInstaller>
     [SerializeField] private LargeMeteorData LargeMeteor;
     [SerializeField] private MediumMeteorData MediumMeteor;
     [SerializeField] private SmallMeteorData SmallMeteor;
-
+    [SerializeField] private SpaceShipData SpaceShipData;
     [Space]
     [Space]
     [SerializeField] private GameAssets gameAssets;
@@ -59,11 +59,14 @@ public class AsteroidsInstaller : ScriptableObjectInstaller<AsteroidsInstaller>
     }
     public override void InstallBindings()
     {
+        Container.BindInstance(gameLevels);
         Container.BindInstance(shipData);
+        
         Container.BindInstance(LargeMeteor);
         Container.BindInstance(MediumMeteor);
-        Container.BindInstance(SmallMeteor);
-        Container.BindInstance(gameLevels);
+        Container.BindInstance(SmallMeteor); 
+        Container.BindInstance(SpaceShipData);
+        
         Container.BindInstance(gameAssets);
         Container.BindInstance(GlobalProjectileSettings);
     }
@@ -90,10 +93,10 @@ public class MeteorData<T>
 public class SpaceShipData
 {
     public ProjectileData ProjectileData;
-    public LayerMask LayerMask;
     public float minSize, maxSize;
     public AsteroidsInstaller.MovementEntityData MovementEntityData;
     public int Score;
+    public float ShootInterval = 0.5f;
 }
 [Serializable]
 public class LargeMeteorData : MeteorData<LargeMeteorData> {}

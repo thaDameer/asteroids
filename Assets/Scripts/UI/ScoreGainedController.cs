@@ -62,7 +62,7 @@ public class ScoreGainedController : ControllerBase<ScoreGainedController.Parame
         {
             var currentValue = 0;
             
-            yield return DOTween.To(() => currentValue, x => currentValue = x, base.parameters.GainedScore, 0.5f)
+            yield return DOTween.To(() => currentValue, x => currentValue = x, base.parameters.GainedScore, 0.2f)
                 .SetEase(Ease.OutQuint).OnUpdate((() =>
                 {
                     gainedText.text = Mathf.RoundToInt(currentValue).ToString();
