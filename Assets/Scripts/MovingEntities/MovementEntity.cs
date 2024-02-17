@@ -45,7 +45,7 @@ public abstract class MovementEntity : MonoBehaviour
         transform.position += MovementDirection * currentSpeed * Time.deltaTime;
     }
 
-    public virtual void UpdateRotation(Vector2 input)
+    protected virtual void UpdateRotation(Vector2 input)
     {
         RotationTarget.Rotate(Vector3.forward * -input.x * RotationSpeed * Time.deltaTime);
     }

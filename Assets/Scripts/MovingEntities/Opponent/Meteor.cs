@@ -7,6 +7,7 @@ public class Meteor : MovementEntity,IDestructable,IDestructibleOpponent
 {
     [Inject] private IEnemyService _enemyService;
     public GameObject DestroyedGameObject => gameObject;
+    public bool IsDead { get; set; }
     public Vector2 DestroyedPos { get; set; }
     public int Score { get; set; }
     [Inject]private IEnemyService enemyService;
@@ -16,7 +17,7 @@ public class Meteor : MovementEntity,IDestructable,IDestructibleOpponent
     [field: SerializeField]public SpriteRenderer SpriteRenderer { get; set; }
    public int MaxHealth { get; set; }
     public int CurrentHealth { get; set; }
- private void ClearAndDestroy()
+    private void ClearAndDestroy()
     {
         enemyService.OnClearAllEnemies -= ClearAndDestroy;
         if(gameObject)
@@ -61,10 +62,16 @@ public class Meteor : MovementEntity,IDestructable,IDestructibleOpponent
         UpdateMovement(true);
         UpdateCollisionDetection();
     }
+
     public void Died()
     {
-        enemyService.OnClearAllEnemies -= ClearAndDestroy;
-        Destroy(gameObject);
+        if (!IsDead)
+        {
+            _enemyService.RemoveDestructible(this);
+            enemyService.OnClearAllEnemies -= ClearAndDestroy;
+            Destroy(gameObject);
+            IsDead = true;
+        }
     } 
     
     public void TakeDamage(int dmg)
@@ -73,7 +80,7 @@ public class Meteor : MovementEntity,IDestructable,IDestructibleOpponent
         float flashDuration = 0.05f;
         if(CurrentHealth>0) return;
         DestroyedPos = transform.position;
-        _enemyService.RemoveDestructible(this);
+        
         SpriteHelperClass.Flash(SpriteRenderer, Color.black, flashDuration, 2);
         Invoke("Died",flashDuration+0.1f);
     }

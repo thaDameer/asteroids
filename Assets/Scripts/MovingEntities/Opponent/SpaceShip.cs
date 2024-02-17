@@ -9,6 +9,7 @@ public class SpaceShip : ShootingMovementEntity, IDestructibleOpponent,IDestruct
 {
     public override Vector3 MovementDirection { get; set; }
     private List<Vector2> movePositions = new List<Vector2>();
+    public bool IsDead { get; set; }
     public Vector2 DestroyedPos { get; set; }
     public int Score { get; set; }
     private int randomDir;
@@ -22,7 +23,6 @@ public class SpaceShip : ShootingMovementEntity, IDestructibleOpponent,IDestruct
     public int CurrentHealth { get; set; }
     private void ClearAndDestroy()
     {
-        enemyService.OnClearAllEnemies -= ClearAndDestroy;
         if(gameObject)
             Destroy(gameObject);
     }
@@ -66,7 +66,10 @@ public class SpaceShip : ShootingMovementEntity, IDestructibleOpponent,IDestruct
         float distToTarget = Vector2.Distance(transform.position, currentTarget);
         if (distToTarget < 0.1f)
         {
+            enemyService.RemoveDestructible(this);
+            enemyService.OnClearAllEnemies -= ClearAndDestroy;
             Destroy(gameObject);
+            return;
         }
         UpdateCollisionDetection();
         
@@ -151,7 +154,13 @@ public class SpaceShip : ShootingMovementEntity, IDestructibleOpponent,IDestruct
     
     public void TakeDamage(int dmg)
     {
-        enemyService.RemoveDestructible(this);
-        ClearAndDestroy();
+        if (!IsDead)
+        {
+            enemyService.RemoveDestructible(this);
+            enemyService.OnClearAllEnemies -= ClearAndDestroy;
+            Destroy(gameObject);
+            IsDead = true;
+        }
     }
+   
 }

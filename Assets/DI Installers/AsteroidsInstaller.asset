@@ -26,6 +26,36 @@ MonoBehaviour:
       spaceShipsAmount: 3
     - meteorsAmount: 8
       spaceShipsAmount: 4
+    - meteorsAmount: 10
+      spaceShipsAmount: 5
+    - meteorsAmount: 12
+      spaceShipsAmount: 6
+    - meteorsAmount: 15
+      spaceShipsAmount: 7
+    - meteorsAmount: 18
+      spaceShipsAmount: 10
+    - meteorsAmount: 20
+      spaceShipsAmount: 12
+    - meteorsAmount: 22
+      spaceShipsAmount: 14
+    - meteorsAmount: 24
+      spaceShipsAmount: 16
+    - meteorsAmount: 28
+      spaceShipsAmount: 18
+    - meteorsAmount: 30
+      spaceShipsAmount: 20
+    - meteorsAmount: 32
+      spaceShipsAmount: 22
+    - meteorsAmount: 34
+      spaceShipsAmount: 24
+    - meteorsAmount: 36
+      spaceShipsAmount: 26
+    - meteorsAmount: 38
+      spaceShipsAmount: 28
+    - meteorsAmount: 40
+      spaceShipsAmount: 30
+    - meteorsAmount: 50
+      spaceShipsAmount: 35
   shipData:
     ProjectileData:
       ShootSpeed: 6
@@ -83,7 +113,7 @@ MonoBehaviour:
     MovementEntityData:
       <AccelerationSpeed>k__BackingField: 5
       <DecelerationSpeed>k__BackingField: 5
-      <MaxSpeed>k__BackingField: 2
+      <MaxSpeed>k__BackingField: 4.5
       <RotationSpeed>k__BackingField: 0
     Score: 150
     ShootInterval: 3
