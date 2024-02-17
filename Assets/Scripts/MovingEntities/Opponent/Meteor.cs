@@ -9,10 +9,7 @@ public class Meteor : MovementEntity,IDestructable,IDestructibleOpponent
     public GameObject DestroyedGameObject => gameObject;
     public Vector2 DestroyedPos { get; set; }
     public int Score { get; set; }
-    public void ClearObject()
-    {
-        Destroy(gameObject);
-    }
+    [Inject]private IEnemyService enemyService;
 
     public override Vector3 MovementDirection { get; set; }
     private Vector2 rotateDir;
@@ -20,14 +17,21 @@ public class Meteor : MovementEntity,IDestructable,IDestructibleOpponent
    public int MaxHealth { get; set; }
     public int CurrentHealth { get; set; }
 
-    
+    private void ClearAndDestroy()
+    {
+        enemyService.OnClearAllEnemies -= ClearAndDestroy;
+        if(gameObject)
+            Destroy(gameObject);
+    }
 
     public void Setup<T>(MeteorData<T> meteorData)
     {
         SetupMeteor();
+        enemyService.OnClearAllEnemies += ClearAndDestroy;
         targetLayer = meteorData.TargetLayer;
         Score = meteorData.Score;
-        collisionRadius = meteorData.CollisionRadius;
+        collisionRadius = meteorData.MeteorSize;
+        transform.localScale = Vector3.one * meteorData.MeteorSize;
         Setup(meteorData.MovementEntityData);
     }
     private void SetupMeteor()
@@ -59,6 +63,7 @@ public class Meteor : MovementEntity,IDestructable,IDestructibleOpponent
     }
     public void Died()
     {
+        enemyService.OnClearAllEnemies -= ClearAndDestroy;
         Destroy(gameObject);
     } 
     

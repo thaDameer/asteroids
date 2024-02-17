@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,6 +9,7 @@ using Random = UnityEngine.Random;
 public class EnemyService : MonoBehaviour, IEnemyService
 {
     
+    public Action OnClearAllEnemies { get; set; }
     [Inject]
     private LargeMeteor.Factory largeMeteorFactory;
     [Inject]
@@ -28,14 +30,8 @@ public class EnemyService : MonoBehaviour, IEnemyService
 
     private void TryClearLevel()
     {
-        if (_destructibleOpponents.Count > 0)
-        {
-            foreach (var iDestructibleOpponent in _destructibleOpponents)
-            {
-                iDestructibleOpponent.ClearObject();
-            }
-            _destructibleOpponents.Clear();
-        }
+        OnClearAllEnemies?.Invoke();
+        _destructibleOpponents.Clear();
     }
     public void Setup(AsteroidsInstaller.GameLevels.LevelData levelData,bool clearLevel = false)
     {
@@ -55,6 +51,7 @@ public class EnemyService : MonoBehaviour, IEnemyService
     {
         if (!_destructibleOpponents.Contains(destructibleOpponent))
         {
+
             _destructibleOpponents.Add(destructibleOpponent);
         }   
     }
@@ -88,6 +85,9 @@ public class EnemyService : MonoBehaviour, IEnemyService
         if(_destructibleOpponents.Count <= 0)
             _levelHandler.LevelCompleted();
     }
+
+
+
     private void SpawnMeteors<T>(PlaceholderFactory<T> meteorFactory, int meteorCount,int spaceShipsCount,Vector2 newPos) where T : Meteor
     {
         for (int i = 0; i < meteorCount; i++)
@@ -144,4 +144,5 @@ public interface IEnemyService
     List<IDestructibleOpponent> _destructibleOpponents { get; set; }
     public void AddDestructible(IDestructibleOpponent destructibleOpponent);
     public void RemoveDestructible(IDestructibleOpponent destructibleOpponent);
+    public Action OnClearAllEnemies { get; set; }
 }

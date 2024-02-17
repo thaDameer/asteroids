@@ -15,7 +15,7 @@ public abstract class MovementEntity : MonoBehaviour
     protected float currentSpeed;
 
 
-    public void Setup(AsteroidsInstaller.MovementEntityData movementEntityData)
+    protected void Setup(AsteroidsInstaller.MovementEntityData movementEntityData)
     {
         AccelerationSpeed = movementEntityData.AccelerationSpeed;
         MaxSpeed = movementEntityData.MaxSpeed;
@@ -23,11 +23,15 @@ public abstract class MovementEntity : MonoBehaviour
         RotationSpeed = movementEntityData.RotationSpeed;
     }
 
-    // public void SetupEntity(AsteroidsInstaller.MovementEntityData data)
-    // {
-    //     AccelerationSpeed = data.AccelerationSpeed
-    // }
-    public virtual void UpdateMovement(bool accelerate)
+    public virtual void OnBoundaryTeleportStart()
+    {
+        
+    }
+    public virtual void OnBoundaryTeleportEnd()
+    {
+        
+    }
+    protected virtual void UpdateMovement(bool accelerate)
     {
         if (accelerate)
         {

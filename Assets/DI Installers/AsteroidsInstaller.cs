@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Serialization;
 using Zenject;
+using Object = UnityEngine.Object;
 
 [CreateAssetMenu(fileName = "AsteroidsInstaller", menuName = "Installers/AsteroidsInstaller")]
 public class AsteroidsInstaller : ScriptableObjectInstaller<AsteroidsInstaller>
@@ -17,10 +18,14 @@ public class AsteroidsInstaller : ScriptableObjectInstaller<AsteroidsInstaller>
     [SerializeField] private LargeMeteorData LargeMeteor;
     [SerializeField] private MediumMeteorData MediumMeteor;
     [SerializeField] private SmallMeteorData SmallMeteor;
+
     [Space]
     [Space]
     [SerializeField] private GameAssets gameAssets;
+
+    [Space] [SerializeField] private ProjectileSettings GlobalProjectileSettings;
     
+
     [Serializable]
     public class GameLevels
     {
@@ -47,10 +52,10 @@ public class AsteroidsInstaller : ScriptableObjectInstaller<AsteroidsInstaller>
     public class GameAssets
     {
         public PlayerShip PlayerShipPrefab;
-        [FormerlySerializedAs("largeOpponent")] [FormerlySerializedAs("LargeMeteor")] public LargeMeteor largeMeteor;
-        [FormerlySerializedAs("mediumOpponent")] [FormerlySerializedAs("MediumMeteor")] public MediumMeteor mediumMeteor;
-        [FormerlySerializedAs("smallOpponent")] [FormerlySerializedAs("SmallMeteor")] public SmallMeteor smallMeteor;
-        
+        public LargeMeteor largeMeteor;
+        public MediumMeteor mediumMeteor;
+        public SmallMeteor smallMeteor;
+        public SpaceShip spaceShip;
     }
     public override void InstallBindings()
     {
@@ -60,9 +65,11 @@ public class AsteroidsInstaller : ScriptableObjectInstaller<AsteroidsInstaller>
         Container.BindInstance(SmallMeteor);
         Container.BindInstance(gameLevels);
         Container.BindInstance(gameAssets);
+        Container.BindInstance(GlobalProjectileSettings);
     }
 
 }
+
 
 [Serializable]
 public class ShipData
@@ -75,14 +82,28 @@ public class ShipData
 public class MeteorData<T>
 {
     public LayerMask TargetLayer;
-    public float CollisionRadius;
+    public float MeteorSize;
     public int Score;
     public AsteroidsInstaller.MovementEntityData MovementEntityData;
 }
-
+[Serializable]
+public class SpaceShipData
+{
+    public ProjectileData ProjectileData;
+    public LayerMask LayerMask;
+    public float minSize, maxSize;
+    public AsteroidsInstaller.MovementEntityData MovementEntityData;
+    public int Score;
+}
 [Serializable]
 public class LargeMeteorData : MeteorData<LargeMeteorData> {}
 [Serializable]
 public class MediumMeteorData : MeteorData<MediumMeteorData>{}
 [Serializable]
 public class SmallMeteorData : MeteorData<SmallMeteorData>{}
+
+[Serializable]
+public class ProjectileSettings
+{
+    public float projectileDuration = 1;
+}

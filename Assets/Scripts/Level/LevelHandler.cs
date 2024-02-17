@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Zenject;
 
-public class LevelHandler : MonoBehaviour,IObserver
+public class LevelHandler : MonoBehaviour
 {
     [Inject]
     private Camera _camera;
@@ -17,11 +17,12 @@ public class LevelHandler : MonoBehaviour,IObserver
     [Inject]
     private PlayerShip.Factory playerSpawnFactory;
     
+ 
+
     [Inject]
-    public void Construct(IObserverService observerService)
+    public void Construct(IProjectileSpawner projectileSpawner)
     {
-        observerService.RegisterObserver(this);
-     
+        projectileSpawner.OnProjectileCreated += AddProjectileToLevel;
     }
     [Inject]
     private ILevelService _levelService;
@@ -54,24 +55,7 @@ public class LevelHandler : MonoBehaviour,IObserver
             }
         }
     }
-    public void Notify(GameState gameState)
-    {
-       
-    }
-
-    private void DelayedStart()
-    {
-        StartCoroutine(DelayedRunStart_CO());
-    }
-    
-    
-    IEnumerator DelayedRunStart_CO()
-    {
-        yield return new WaitForSeconds(1f);
-        StartNextLevel();
-    }
-
-   
+  
     private int currentPlayingLevel;
     private void StartNextLevel()
     { 
@@ -117,6 +101,13 @@ public class LevelHandler : MonoBehaviour,IObserver
         currentShip.transform.parent = transform;
         AddMovementEntity(currentShip);
     }
+
+    #region  Level Boundaries
+
+    private void AddProjectileToLevel(Projectile projectile)
+    {
+        AddMovementEntity(projectile);
+    }  
     public void AddMovementEntity(MovementEntity movementEntity)
     {
         if(levelEntities.Contains(movementEntity))return;
@@ -151,8 +142,10 @@ public class LevelHandler : MonoBehaviour,IObserver
 
         if (newX != viewportPos.x || newY != viewportPos.y)
         {
+            movementEntity.OnBoundaryTeleportStart();
             var newPos = (Vector2)_camera.ViewportToWorldPoint(new Vector3(newX, newY));
             movementEntity.transform.position = newPos;
+            movementEntity.OnBoundaryTeleportEnd();
         }
 
       
@@ -166,6 +159,8 @@ public class LevelHandler : MonoBehaviour,IObserver
             
         }
     }
+    #endregion
+  
 
 
     public void LevelCompleted()

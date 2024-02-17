@@ -28,7 +28,7 @@ MonoBehaviour:
       spaceShipsAmount: 2
   shipData:
     ProjectileData:
-      ShootSpeed: 20
+      ShootSpeed: 6
       HitDamage: 1
       TargetLayer:
         serializedVersion: 2
@@ -42,40 +42,40 @@ MonoBehaviour:
     TargetLayer:
       serializedVersion: 2
       m_Bits: 64
-    CollisionRadius: 1
+    MeteorSize: 0.8
     Score: 20
     MovementEntityData:
       <AccelerationSpeed>k__BackingField: 5
       <DecelerationSpeed>k__BackingField: 5
       <MaxSpeed>k__BackingField: 3
       <RotationSpeed>k__BackingField: 50
-    meteorSize: 2
   MediumMeteor:
     TargetLayer:
       serializedVersion: 2
       m_Bits: 64
-    CollisionRadius: 0.5
+    MeteorSize: 0.4
     Score: 50
     MovementEntityData:
       <AccelerationSpeed>k__BackingField: 6
       <DecelerationSpeed>k__BackingField: 5
       <MaxSpeed>k__BackingField: 3
       <RotationSpeed>k__BackingField: 80
-    meteorSize: 1
   SmallMeteor:
     TargetLayer:
       serializedVersion: 2
       m_Bits: 64
-    CollisionRadius: 0.3
+    MeteorSize: 0.2
     Score: 100
     MovementEntityData:
       <AccelerationSpeed>k__BackingField: 7
       <DecelerationSpeed>k__BackingField: 5
       <MaxSpeed>k__BackingField: 4
       <RotationSpeed>k__BackingField: 90
-    meteorSize: 0
   gameAssets:
     PlayerShipPrefab: {fileID: 9069781640288666224, guid: 790db0fba3bfb4d5f99e8c555cc749a2, type: 3}
     largeMeteor: {fileID: 5484270136046163785, guid: 32565678cf8c74b7f8de132caaf7a029, type: 3}
     mediumMeteor: {fileID: 8843479358632302621, guid: 118e0e0d50130416e80a5730dadc1ad8, type: 3}
     smallMeteor: {fileID: 6114491220119709379, guid: 43c164f86f12245d8a9d71876c713e9f, type: 3}
+    spaceShip: {fileID: 5055014928691773546, guid: 978c1778281e44804b1cbddb71dc87fe, type: 3}
+  GlobalProjectileSettings:
+    projectileDuration: 1.2

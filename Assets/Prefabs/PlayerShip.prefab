@@ -32,6 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3233757373060144476}
+  - {fileID: 1216874015727441722}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9069781640288666224
@@ -47,13 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <RotationTarget>k__BackingField: {fileID: 7960592631071143642}
-  <ProjectileData>k__BackingField:
-    ShootSpeed: 20
-    HitDamage: 1
-    TargetLayer:
-      serializedVersion: 2
-      m_Bits: 128
   rb2d: {fileID: 241739961655011504}
+  _trailRenderer: {fileID: 7461077149757966993}
   <SpriteRenderer>k__BackingField: {fileID: 7502058313299471132}
 --- !u!50 &241739961655011504
 Rigidbody2D:
@@ -93,7 +89,6 @@ GameObject:
   - component: {fileID: 3233757373060144476}
   - component: {fileID: 7502058313299471132}
   - component: {fileID: 3152466609028788618}
-  - component: {fileID: 3411279823253237561}
   m_Layer: 6
   m_Name: spaceShips_009
   m_TagString: Untagged
@@ -235,14 +230,46 @@ PolygonCollider2D:
       - {x: 0.14, y: -0.34}
       - {x: 0.24, y: -0.41}
   m_UseDelaunayMesh: 0
---- !u!96 &3411279823253237561
+--- !u!1 &5233058272352819857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1216874015727441722}
+  - component: {fileID: 7461077149757966993}
+  m_Layer: 6
+  m_Name: trail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1216874015727441722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5233058272352819857}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7960592631071143642}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!96 &7461077149757966993
 TrailRenderer:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4087292631254789013}
+  m_GameObject: {fileID: 5233058272352819857}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1

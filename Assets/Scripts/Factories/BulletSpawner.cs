@@ -1,19 +1,24 @@
 using System;
 using System.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Pool;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using Zenject;
 
 
-public class BulletSpawner : MonoBehaviour,IBulletSpawner
+public class ProjectileSpawner : MonoBehaviour,IProjectileSpawner
 {
     [Header("Projectiles")]
     [SerializeField] private AssetReferenceT<Projectile> projectileReference;
     private Projectile shipProjectile;
     
-
-    private ObjectPool<Projectile> pooledPlayerProjectiles;
+    [Inject] private ProjectileSettings projectileSettings;
+    public float ProjectileDurationTime => projectileSettings.projectileDuration;
+    public Action<Projectile> OnProjectileCreated { get; set; }
+    
+    private ObjectPool<Projectile> pooledProjectiles;
 
     private void Awake()
     {
@@ -27,12 +32,12 @@ public class BulletSpawner : MonoBehaviour,IBulletSpawner
 
     private void TryReturnProjectileToPool(Projectile projectile)
     {
-        pooledPlayerProjectiles.Release(projectile);
+        pooledProjectiles.Release(projectile);
     }
     private  void Start()
     {
         PreLoadProjectiles();
-        pooledPlayerProjectiles = new ObjectPool<Projectile>(CreateShipProjectile, TakeFromPool, ReturnToPool);
+        pooledProjectiles = new ObjectPool<Projectile>(CreateProjectile, TakeFromPool, ReturnToPool);
     }
     
     async void PreLoadProjectiles()
@@ -63,19 +68,26 @@ public class BulletSpawner : MonoBehaviour,IBulletSpawner
 
         return null;
      }
-    public void ShootPlayerBullet(ProjectileShootingData shootingData)
+
+
+
+    public void ShootPlayerBullet(GlobalProjectileData data)
     {
-        var projectile = pooledPlayerProjectiles.Get();
-        projectile.transform.position = shootingData.Position;
-        projectile.transform.rotation = shootingData.Rotation;
-        projectile.Shoot(shootingData);
+        var projectile = pooledProjectiles.Get();
+        data.SetDuration(ProjectileDurationTime);
+        projectile.transform.position = data.Position;
+        projectile.transform.rotation = data.Rotation;
+        projectile.Shoot(data);
     }
+
+    
 
     #region Object Pooling
 
-    private Projectile CreateShipProjectile()
+    private Projectile CreateProjectile()
     {
         var clone = Instantiate(shipProjectile,transform);
+        OnProjectileCreated?.Invoke(clone);
         return clone;
     }
     
@@ -96,10 +108,11 @@ public class BulletSpawner : MonoBehaviour,IBulletSpawner
     
 }
 
-public interface IBulletSpawner
+public interface IProjectileSpawner
 {
-    public  void ShootPlayerBullet(ProjectileShootingData shootingData){}
+    public float ProjectileDurationTime { get; }
+    public  void ShootPlayerBullet(GlobalProjectileData data){}
 
-    
-    
+    public Action<Projectile> OnProjectileCreated { get; set; }
+
 }

@@ -3,24 +3,27 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Zenject;
 
-public class PlayerShip : ShootingMovementEntity,IDestructable,IObserver
+public class PlayerShip : ShootingMovementEntity,IDestructable
 {
 
     [SerializeField]private Rigidbody2D rb2d;
-    
+
+    [SerializeField] private TrailRenderer _trailRenderer;
     
     [Inject]private IControllerService _inputControllerService;
     [Inject] private IObserverService _observerService;
     [Inject] private IShipLifeCounter _shipLifeCounter;
-    
+    [field: SerializeField]public SpriteRenderer SpriteRenderer { get; set; }
+    public int MaxHealth { get; set; }
+    public int CurrentHealth { get; set; }
     public bool isShipDestroyed { get; private set; }
-    
     private Vector3 currentDirection;
-    private ShipData _shipData;
+
+    private Vector2 velocity => ((Vector2)transform.position - lastPos) / Time.deltaTime;
+    private Vector2 lastPos;
     [Inject]
     public void Construct(ShipData shipData)
     {
-        _shipData = shipData;
         Setup(shipData.ProjectileData);
         Setup(shipData.MovementEntityData);
     }
@@ -37,8 +40,7 @@ public class PlayerShip : ShootingMovementEntity,IDestructable,IObserver
         set => currentDirection = value;
     }
     
-    private Vector2 velocity => ((Vector2)transform.position - lastPos) / Time.deltaTime;
-    private Vector2 lastPos;
+  
     void Update()
     {
         var currentPos = transform.position;
@@ -57,7 +59,7 @@ public class PlayerShip : ShootingMovementEntity,IDestructable,IObserver
         UpdateMovement(_inputControllerService.Accelerate);
     }
 
-    public override void UpdateMovement(bool accelerate)
+    protected override void UpdateMovement(bool accelerate)
     {
         if (!accelerate)
         {
@@ -71,15 +73,29 @@ public class PlayerShip : ShootingMovementEntity,IDestructable,IObserver
         rb2d.velocity = Vector2.ClampMagnitude(rb2d.velocity, MaxSpeed);
     }
     
-    [field: SerializeField]public SpriteRenderer SpriteRenderer { get; set; }
-    public int MaxHealth { get; set; }
-    public int CurrentHealth { get; set; }
+
     public void TakeDamage(int dmg)
     {
         CurrentHealth -= dmg;
         SpriteHelperClass.Flash(SpriteRenderer,Color.black,0.1f,2);
         Invoke("Died",0.1f);
 
+    }
+
+    public override void OnBoundaryTeleportStart()
+    {
+        base.OnBoundaryTeleportStart();
+        _trailRenderer.Clear();
+        _trailRenderer.gameObject.SetActive(false);
+        _trailRenderer.emitting = false;
+    }
+
+    public override void OnBoundaryTeleportEnd()
+    {
+        base.OnBoundaryTeleportEnd();
+        _trailRenderer.Clear();
+        _trailRenderer.gameObject.SetActive(true);
+        _trailRenderer.emitting = true;
     }
 
     public void Died()
@@ -89,16 +105,8 @@ public class PlayerShip : ShootingMovementEntity,IDestructable,IObserver
         _shipLifeCounter.ShipDestroyed();
         Destroy(gameObject);
     }
-
-    private void OnDestroy()
-    {
-        _observerService.UnregisterObserver(this);
-    }
+    
 
     public class Factory : PlaceholderFactory<PlayerShip> { }
-
-    public void Notify(GameState gameState)
-    {
-
-    }
+    
 }

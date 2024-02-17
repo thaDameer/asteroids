@@ -9,9 +9,9 @@ using Zenject;
 public abstract class ShootingMovementEntity : MovementEntity
 {
 
-    [field: SerializeField] public ProjectileData ProjectileData { get; set; }
+    public ProjectileData ProjectileData { get; set; }
 
-    private IBulletSpawner _bulletSpawner;
+    private IProjectileSpawner _projectileSpawner;
 
     protected void Setup(ProjectileData projectileData)
     {
@@ -19,17 +19,17 @@ public abstract class ShootingMovementEntity : MovementEntity
     }
 
 [Inject]
-    public void Construct(IBulletSpawner bulletSpawner)
+    public void Construct(IProjectileSpawner projectileSpawner)
     {
-        this._bulletSpawner = bulletSpawner;
+        this._projectileSpawner = projectileSpawner;
     }
     
     public virtual void Shoot()
     {
-        ProjectileShootingData shootingData =
-            new ProjectileShootingData(ProjectileData, transform, transform.up);
+        GlobalProjectileData data =
+            new GlobalProjectileData(ProjectileData, transform, transform.up);
 
-        _bulletSpawner.ShootPlayerBullet(shootingData);
+        _projectileSpawner.ShootPlayerBullet(data);
     }
     
 }
@@ -41,18 +41,22 @@ public struct ProjectileData
     public LayerMask TargetLayer;
 }
 
-public struct ProjectileShootingData
+public class GlobalProjectileData
 {
     public ProjectileData ProjectileData;
     public Vector2 Position;
     public Quaternion Rotation;
-    public Vector2 Direction;
-    public ProjectileShootingData(ProjectileData projectileData,Transform transform, Vector2 dir)
+    public Vector2 Direction { get; private set; }
+
+    public float ProjectileDuration;
+    public GlobalProjectileData(ProjectileData projectileData,Transform transform, Vector2 dir)
     {
         ProjectileData = projectileData;
         Position = transform.position;
         Rotation = transform.rotation;
         Direction = dir;
     }
+
+    public void SetDuration(float duration) => ProjectileDuration = duration;
 }
 

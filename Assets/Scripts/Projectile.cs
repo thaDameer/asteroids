@@ -1,49 +1,59 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Projectile : MonoBehaviour
+public class Projectile : MovementEntity
 {
-    [FormerlySerializedAs("inactive")] public bool active;
+    public bool active;
     public static Action<Projectile> OnReturnToPool;
-    [FormerlySerializedAs("setupData")] [FormerlySerializedAs("_dataContainer")] [SerializeField]private ProjectileData data;
-    private float shootSpeed => data.ShootSpeed;
+    private ProjectileData data;
     private int HitDamage => data.HitDamage;
     private LayerMask targetLayer => data.TargetLayer;
     [SerializeField]private float radius = 0.2f;
     [SerializeField] private float distance = 0.2f;
-    private Vector2 shootDir;
+
     private float aliveCounter = 0;
-    private float aliveDuration = 3;
-    public void Shoot(ProjectileShootingData projectileShootingData)
+    private float projectileDuration { get; set; }
+    public override Vector3 MovementDirection { get; set; }
+    public void Shoot(GlobalProjectileData globalProjectileData)
     {
         Activate(true);
+        transform.localScale = Vector3.one;
         aliveCounter = 0;
-        data = projectileShootingData.ProjectileData;
-        shootDir = projectileShootingData.Direction;
+        AccelerationSpeed = 0;
+        data = globalProjectileData.ProjectileData;
+        currentSpeed = globalProjectileData.ProjectileData.ShootSpeed;
+        MaxSpeed = globalProjectileData.ProjectileData.ShootSpeed;
+        projectileDuration = globalProjectileData.ProjectileDuration;
+        
+        MovementDirection = globalProjectileData.Direction;
     }
 
     public void Activate(bool activate) => active = activate;
     public void Update()
     {
-        if(shootDir == Vector2.zero || !active) return;
+        
+        if((Vector2)MovementDirection == Vector2.zero || !active) return;
+        UpdateMovement(true);
         aliveCounter += Time.deltaTime;
-        if (aliveCounter >= aliveDuration)
+        
+        if (aliveCounter >= projectileDuration)
         {
-            OnReturnToPool?.Invoke(this);
+            active = false;
+            ReturnToPool();
+            //OnReturnToPool?.Invoke(this);
         }
         ProcessRaycastHitDetection();
-        UpdateMovement();   
+        UpdateMovement(true);   
     }
 
-    private void UpdateMovement()
+    private void ReturnToPool()
     {
-        transform.position += transform.up * shootSpeed * Time.deltaTime;
-      
+        transform.DOScale(Vector3.zero, 0.15f).SetEase(Ease.OutQuint).OnComplete((() => OnReturnToPool?.Invoke(this)));
     }
-
-    
+   
     private void ProcessRaycastHitDetection()
     {
         var hit = Physics2D.OverlapCircle(transform.position, radius,targetLayer);
@@ -56,7 +66,6 @@ public class Projectile : MonoBehaviour
             }
         }
     }
-    
     private void HitIDamageableTarget(IDestructable destructable)
     {
         destructable.TakeDamage(HitDamage);
@@ -74,4 +83,7 @@ public class Projectile : MonoBehaviour
         Gizmos.color = color;
         Gizmos.DrawWireSphere(circleCastPos,radius);
     }
+
+
+ 
 }

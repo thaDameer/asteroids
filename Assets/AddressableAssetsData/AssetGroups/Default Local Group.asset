@@ -27,6 +27,30 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 32565678cf8c74b7f8de132caaf7a029
+    m_Address: Assets/Prefabs/Opponents/LargeMeteor.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Enemy
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 118e0e0d50130416e80a5730dadc1ad8
+    m_Address: Assets/Prefabs/Opponents/MediumMeteor.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Enemy
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 43c164f86f12245d8a9d71876c713e9f
+    m_Address: Assets/Prefabs/Opponents/SmallMeteor.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Enemy
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 978c1778281e44804b1cbddb71dc87fe
+    m_Address: Assets/Prefabs/Opponents/SpaceShip.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Enemy
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: bdc51a73aca6d48f7bd71253dc63e054, type: 2}
   m_SchemaSet:
